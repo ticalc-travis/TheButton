@@ -53,7 +53,6 @@ table#highscores td {
 table#highscores tr:hover {
   background-color: #eee;
   font-weight: 300;
-  cursor: pointer;
 }
 
 table#highscores th {
