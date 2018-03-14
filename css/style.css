@@ -38,6 +38,8 @@ table#highscores {
   border: none;
   background-color: #fafafa;
   margin-top: 10px;
+  border-collapse: separate;
+  border-spacing: 7px 3px;
 }
 
 table#highscores tr {
@@ -64,6 +66,10 @@ table#highscores .lbusername {
 
 table#highscores tr td.lbusername:hover {
   font-weight: 300;
+}
+
+table#highscores td.lbrank {
+  font-weight: 600;
 }
 
 #TheButton {
