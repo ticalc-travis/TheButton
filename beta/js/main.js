@@ -121,7 +121,8 @@ function ready() {
     }
   }, 50);
   // </copyright>
-  firebase.database().ref("/button/users/").orderByValue().limitToLast(5).on('value',function(snapshot) {
+  var leaderBoardEntries = 5;
+  firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderBoardEntries).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
     scores.innerHTML = "";
     var x = n => {
@@ -138,10 +139,10 @@ function ready() {
       }
       return "N/A"
     }
-    var rank = 1;
+    var rank = leaderBoardEntries;
     snapshot.forEach(function(childSnapshot) {
       scores.innerHTML+="<tr><td>"+rank+"</td><td>"+cleanse(childSnapshot.key)+"</td><td>"+x(childSnapshot.val())+"</td></tr>";
-      rank++;
+      rank--;
     });
     //reverse ordering of elements
     (e=>{for(var d=0;d<e.childNodes.length;d++)e.insertBefore(e.childNodes[d],e.firstChild)})(document.getElementById("highscores"));
