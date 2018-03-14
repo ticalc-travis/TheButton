@@ -121,8 +121,8 @@ function ready() {
     }
   }, 50);
   // </copyright>
-  var leaderBoardEntries = 5;
-  firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderBoardEntries).on('value',function(snapshot) {
+  var leaderboardLength = 5;
+  firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
     scores.innerHTML = "";
     var x = n => {
@@ -139,7 +139,7 @@ function ready() {
       }
       return "N/A"
     }
-    var rank = leaderBoardEntries;
+    var rank = leaderboardLength;
     snapshot.forEach(function(childSnapshot) {
       scores.innerHTML+="<tr><td>"+rank+"</td><td>"+cleanse(childSnapshot.key)+"</td><td>"+x(childSnapshot.val())+"</td></tr>";
       rank--;
