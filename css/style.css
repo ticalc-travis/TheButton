@@ -72,13 +72,14 @@ table#highscores td.lbrank {
 }
 
 #TheButton {
+  color: #000;
+  background-color: #ededed;
+  padding: 10px 30px;
+  border: 1px solid #ccc;
+  vertical-align: center;
   width: 400px;
   height: 70px;
   transition: all .2s;
-  color: #fff;
-  background-color: #DCDCDC;
-  padding: 15px 0px;
-  border: none;
   text-align: center;
   text-decoration: none;
   font-variant: small-caps;
@@ -95,15 +96,18 @@ table#highscores td.lbrank {
   border-radius: 45px;
   transition: all 0.2s ease 0s;
   cursor: pointer;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 #TheButton.lighted {
-  background-color: #4FC;
   font-style: bold;
 }
 
 #TheButton:hover {
-  box-shadow: 0px 15px 20px rgb(204, 255, 255);
+  background-color: #00BFFF;
+  box-shadow: 0px 20px 20px rgb(204, 255, 255);
   transform: translateY(-7px);
 }
 
