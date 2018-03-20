@@ -108,6 +108,11 @@ table#highscores td.lbrank {
   transform: translateY(-7px);
 }
 
+#TheButton:active {
+  box-shadow: 0px 6px 8px rgb(204, 255, 255);
+  transform: translateY(3px);
+}
+
 p {
   text-align: center; 
 }
