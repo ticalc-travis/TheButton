@@ -132,7 +132,7 @@ strong {
   cursor: pointer;
   border-radius: 5px;
   font-size: 100%;
-  margin: 5px;
+  margin-top: 10px;
 }
 
 #repolink {
