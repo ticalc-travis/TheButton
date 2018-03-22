@@ -22,7 +22,7 @@ function j(user, error) {
 }
 function go() {
   document.getElementById('main-div').classList = 'visible';
-  document.getElementById('logoutbutton').classList = 'visible';
+  document.getElementById('logout').classList = 'visible';
   document.getElementById('login-div').classList = 'hidden';
 }
 
@@ -118,7 +118,7 @@ function ready() {
       }
     }
   }, 70);
-    var leaderboardLength = 5;
+  var leaderboardLength = 5;
   firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
     scores.innerHTML = "";
@@ -202,12 +202,30 @@ if (location.href.endsWith("?logout")) {
   work.
 */
 var linkOverride;
+/*
+  add entries to any desired additional GitHub repos (in “username/repo”
+  format) and live demos to otherRepos
+*/
+var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
   var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
-    t = "GitHub Repo: "
-  t += "legend-of-iphoenix" != i ? '<a href="https://github.com/' + i + location.pathname + '">This fork</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original by _iPhoenix_</a>' : '<a href="https://github.com/Legend-of-iPhoenix/TheButton">Here</a>', 
-  t = linkOverride ? 'GitHub Repo: <a href="'+linkOverride+'">This Fork</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original by _iPhoenix_</a>':t;
-  document.getElementById("repolink").innerHTML = t
+  tr = "GitHub repo: "
+  tr += "legend-of-iphoenix" != i ? '<a href="https://github.com/' + i + location.pathname + '">This fork (' + i + ')</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original (_iPhoenix_)</a>' : '<a href="https://github.com/Legend-of-iPhoenix/TheButton">Here</a>',
+  tr = linkOverride ? 'GitHub Repo: <a href="'+linkOverride+'">This fork (' + i + ')</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original (_iPhoenix_)</a>':tr;
+
+  tl = '';
+  if ('legend-of-iphoenix' != i) {
+    tl += '<b>' + i + '</b> | <a href="https://legend-of-iphoenix.github.io/TheButton/">iPhoenix</a>';
+  }
+  for (i=0; i<otherRepos.length; i++) {
+    repo = otherRepos[i].split('/');
+    tr += ' | <a href="https://github.com/' + repo[0] + '/' + repo[1] + '">' + repo[0] + '</a>';
+    tl += (tl ? ' | ' : '') + '<a href="https://' + repo[0] + '.github.io/' + repo[1] + '">' + repo[0] + '</a>';
+  }
+  if (tl) tl = 'Live site: ' + tl;
+
+  document.getElementById("repolink").innerHTML = tr;
+  document.getElementById("livelink").innerHTML = tl;
   document.getElementById("logoutbutton").onclick = function() {
     firebase.auth().signOut();
     location.reload();
