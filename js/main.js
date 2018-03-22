@@ -116,8 +116,7 @@ function ready() {
         document.getElementById("TheButton").style.backgroundColor = null;
       }
     }
-  }, 50);
-  // </copyright>
+  }, 70);
   var leaderboardLength = 5;
   firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
@@ -192,4 +191,14 @@ ui.start('#firebaseui-auth-container', {
   ],
   tosURL: "https://legend-of-iphoenix.github.io/TheButton/terms.txt"
 });
+if (location.href.endsWith("?logout")) {
+  firebase.auth().signOut();
+  location.href = location.href.replace(location.search, '');
+}
+window.onload = e => {
+  document.getElementById("logoutbutton").onclick = function() {
+    firebase.auth().signOut();
+    location.reload();
+  }
+}
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");

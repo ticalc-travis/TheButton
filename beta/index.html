@@ -1,41 +1,91 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>TheButton</title>
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109579764-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-109579764-3")</script>
-	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-<script>
-firebase.initializeApp({apiKey:"AIzaSyBaQl6IKSIYHXne5trRPgrbAEqu_1vYgbU",authDomain:"demos-and-stuff.firebaseapp.com",databaseURL:"https://demos-and-stuff.firebaseio.com",projectId:"demos-and-stuff",storageBucket:"demos-and-stuff.appspot.com",messagingSenderId:"66793199620"})
-</script>
-	<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-	<script type="text/javascript" src="js/main.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<base target="_blank">
+  <title>TheButton</title>
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109579764-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag("js", new Date), gtag("config", "UA-109579764-3")
+
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey: "AIzaSyBaQl6IKSIYHXne5trRPgrbAEqu_1vYgbU",
+      authDomain: "demos-and-stuff.firebaseapp.com",
+      databaseURL: "https://demos-and-stuff.firebaseio.com",
+      projectId: "demos-and-stuff",
+      storageBucket: "demos-and-stuff.appspot.com",
+      messagingSenderId: "66793199620"
+    })
+
+  </script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <!-- This makes it hard for me personally to use the iOS site, but feel free to add it back in if others have objections. <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
 </head>
+<script type="text/javascript" src="js/main.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">
+<link rel="icon" href="img/favicon.png" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<base target="_blank" />
+</head>
+
 <body>
-	<h1 id="title">TheButton</h1>
-	<div class='visible' id='login-div'>
-		<p> TheButton is a King-of-the-Hill-esque game where the username of the last person to click a button is broadcast to everyone.</p>
-		<p> To join in on the fun, you can register or sign in with Google.</p>
-		<div id="firebaseui-auth-container"></div>
-		<div id="loading-auth">Loading authentication scripts...</div>
-	</div>
-	<div class='hidden' id='main-div'>
-		<button id="TheButton"><p class="rainbow">Click Me</p></button>
-		
-		<p id="label">Loading... (If this doesn't disappear in a few seconds, reload the page)</p>
-		<p id="user-time"></p>
-		
-		<table id="highscores">
-			<tr id="usernametime">
-				<th>&nbsp;</th><th>Username</th><th>Time</th>
-			</tr>
-		</table>
-	</div>
-	<p> </p>
-	<p id="repolink">GitHub Repo: <input id="thisfork" type="button" value="This fork" onclick="window.location.href='https://github.com/jcgter777/TheButton'" /> | <input id="original" type="button" value="Original by iPhoenix" onclick="window.location.href='https://github.com/Legend-of-iPhoenix/TheButton'" /></p>
-	<p id="about|tbgc"><input id="about" type="button" value="About" onclick="window.location.href='/TheButton/about/'" />  <button id="togglebgc" onclick="lightButtonEnabled=!lightButtonEnabled;">Toggle Background Color changing</button></p>
+  <h1 id="title">TheButton</h1>
+  <div class='visible' id='login-div'>
+    <p> TheButton is a King-of-the-Hill-esque game where the username of the last person to click a button is broadcast to everyone.</p>
+    <p> To join in on the fun, you can register or sign in with Google.</p>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loading-auth">Loading authentication scripts...</div>
+  </div>
+  <div class='hidden' id='main-div'>
+    <button id="TheButton"><p class="rainbow">Click Me</p></button>
+
+    <p id="label">Loading... (If this doesn't disappear in a few seconds, reload the page)</p>
+    <p id="user-time"></p>
+
+    <table id="highscores">
+      <tr id="usernametime">
+        <th class="lbrank">&nbsp;</th> <th class="lbusername">Username</th> <th class="lbtime">Time</th>
+      </tr>
+    </table>
+  </div>
+  <p id="about"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a></p>
+  <p id="repolink">GitHub repos: <a href="https://github.com/Legend-of-iPhoenix/TheButton">iPhoenix (original)</a> | <a href="https://github.com/jcgter777/TheButton">jcgter777</a> | <a href="https://github.com/ticalc-travis/TheButton">ticalc-travis (a.k.a. tev)</a></p>
+  <p id="livelink">Live sites: <a href="https://legend-of-iphoenix.github.io/TheButton/">iPhoenix</a> | <a href="https://jcgter777.github.io/TheButton/">jcgter777</a> | <b>ticalc-travis</b></p>
+  <!-- ripped shamelessly from the MDN -->
+  <script type="text/javascript">
+    var windowObjectReference = null; // global variable
+
+    function openAbout() {
+      if (windowObjectReference == null || windowObjectReference.closed)
+      /* if the pointer to the window object in memory does not exist
+         or if such pointer exists but the window was closed */
+
+      {
+        windowObjectReference = window.open("/TheButton/about/",
+          "aboutPage", "resizable,scrollbars,status");
+        /* then create it. The new window will be created and
+           will be brought on top of any other window. */
+      } else {
+        windowObjectReference.focus();
+        /* else the window reference must exist and the window
+           is not closed; therefore, we can bring it back on top of any other
+           window with the focus() method. There would be no need to re-create
+           the window or to reload the referenced resource. */
+      };
+    }
+
+  </script>
+
+  <input type="button" value="Log Out" id="logoutbutton">
 </body>
+
 </html>
