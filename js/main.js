@@ -203,8 +203,8 @@ if (location.href.endsWith("?logout")) {
 */
 var linkOverride;
 /*
-  add entries to any desired additional GitHub repos (in “username/repo”
-  format) and live demos to otherRepos
+  add strings to otherRepos (in “username/repo-name” format) as
+  desired to produce additional links for forks
 */
 var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
