@@ -209,9 +209,10 @@ var linkOverride;
 var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
   var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
-  tr = "GitHub repo: "
   this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + location.pathname);
-  tr += "legend-of-iphoenix" != i ? '<a href="' + this_repo_url + '">' + i + ' (this fork)</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>' : '<a href="https://github.com/Legend-of-iPhoenix/TheButton">Here</a>',
+  is_original = i == 'legend-of-iphoenix';
+  tr = 'GitHub repo: <a href="' + this_repo_url + '">' + (is_original ? 'Here' : i + ' (this fork)') + '</a>';
+  if (!is_original) tr += ' | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>';
 
   tl = '';
   if ('legend-of-iphoenix' != i) {
