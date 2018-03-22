@@ -210,8 +210,8 @@ var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
   var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
   tr = "GitHub repo: "
-  tr += "legend-of-iphoenix" != i ? '<a href="https://github.com/' + i + location.pathname + '">This fork (' + i + ')</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original (_iPhoenix_)</a>' : '<a href="https://github.com/Legend-of-iPhoenix/TheButton">Here</a>',
-  tr = linkOverride ? 'GitHub Repo: <a href="'+linkOverride+'">This fork (' + i + ')</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Original (_iPhoenix_)</a>':tr;
+  tr += "legend-of-iphoenix" != i ? '<a href="https://github.com/' + i + location.pathname + '">' + i + ' (this fork)</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>' : '<a href="https://github.com/Legend-of-iPhoenix/TheButton">Here</a>',
+  tr = linkOverride ? 'GitHub Repo: <a href="'+linkOverride+'">' + i + ' (this fork)</a> | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>':tr;
 
   tl = '';
   if ('legend-of-iphoenix' != i) {
