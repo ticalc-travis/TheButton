@@ -196,7 +196,41 @@ if (location.href.endsWith("?logout")) {
   firebase.auth().signOut();
   location.href = location.href.replace(location.search, '');
 }
+/*
+  set linkOverride to the url of your GitHub Repo if you plan on 
+  publishing your site and the auto-generated github link doesn't
+  work.
+*/
+var linkOverride;
+/*
+  add entries to any desired additional GitHub repos (in “username/repo”
+  format) and live demos to otherRepos
+*/
+var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
+  var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
+  this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + '/' + location.pathname.split('/')[1]);
+  is_original = i == 'legend-of-iphoenix';
+  tr = 'GitHub repo: <a href="' + this_repo_url + '">' + (is_original ? 'Here' : i + ' (this fork)') + '</a>';
+  if (!is_original) tr += ' | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>';
+
+  tl = '';
+  if ('legend-of-iphoenix' != i) {
+    tl += '<b>' + i + '</b> | <a href="https://legend-of-iphoenix.github.io/TheButton/">iPhoenix</a>';
+  }
+  for (i=0; i<otherRepos.length; i++) {
+    repo = otherRepos[i].split('/');
+    tr += ' | <a href="https://github.com/' + repo[0] + '/' + repo[1] + '">' + repo[0] + '</a>';
+    tl += (tl ? ' | ' : '') + '<a href="https://' + repo[0] + '.github.io/' + repo[1] + '">' + repo[0] + '</a>';
+  }
+  if (tl) tl = 'Live site: ' + tl;
+
+  document.getElementById("repolink").innerHTML = tr;
+  if (tl) {
+    document.getElementById("livelink").innerHTML = tl;
+  } else {
+    document.getElementById("livelink").remove();
+  }
   document.getElementById("logoutbutton").onclick = function() {
     firebase.auth().signOut();
     location.reload();
