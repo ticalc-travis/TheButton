@@ -226,7 +226,11 @@ window.onload = e => {
   if (tl) tl = 'Live site: ' + tl;
 
   document.getElementById("repolink").innerHTML = tr;
-  document.getElementById("livelink").innerHTML = tl;
+  if (tl) {
+    document.getElementById("livelink").innerHTML = tl;
+  } else {
+    document.getElementById("livelink").remove();
+  }
   document.getElementById("logoutbutton").onclick = function() {
     firebase.auth().signOut();
     location.reload();
