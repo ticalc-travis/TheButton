@@ -47,19 +47,17 @@
   </div>
   <div class='hidden' id='main-div'>
     <button id="TheButton"><p class="rainbow">Click Me</p></button>
-
     <p id="label">Loading... (If this doesn't disappear in a few seconds, reload the page)</p>
     <p id="user-time"></p>
 
     <table id="highscores">
       <tr id="usernametime">
-        <th class="lbrank">&nbsp;</th> <th class="lbusername">Username</th> <th class="lbtime">Time</th>
+        <th>&nbsp;</th>
+        <th>Username</th>
+        <th>Time</th>
       </tr>
     </table>
   </div>
-  <p id="about"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a></p>
-  <p id="repolink">GitHub repos: <a href="https://github.com/Legend-of-iPhoenix/TheButton">iPhoenix (original)</a> | <a href="https://github.com/jcgter777/TheButton">jcgter777</a> | <a href="https://github.com/ticalc-travis/TheButton">ticalc-travis (a.k.a. tev)</a></p>
-  <p id="livelink">Live sites: <a href="https://legend-of-iphoenix.github.io/TheButton/">iPhoenix</a> | <a href="https://jcgter777.github.io/TheButton/">jcgter777</a> | <b>ticalc-travis</b></p>
   <!-- ripped shamelessly from the MDN -->
   <script type="text/javascript">
     var windowObjectReference = null; // global variable
@@ -84,8 +82,14 @@
     }
 
   </script>
+  <div id="footer">
+    <!-- repo links generated automatically -->
+    <p id="repolink"></p>
+    <p id="about"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a></p>
+    <input type="button" value="Log Out" id="logoutbutton" class="hidden">
+  </div>
+  <br />
 
-  <input type="button" value="Log Out" id="logoutbutton">
 </body>
 
 </html>

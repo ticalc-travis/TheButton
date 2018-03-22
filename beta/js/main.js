@@ -22,6 +22,7 @@ function j(user, error) {
 }
 function go() {
   document.getElementById('main-div').classList = 'visible';
+  document.getElementById('logoutbutton').classList = 'visible';
   document.getElementById('login-div').classList = 'hidden';
 }
 
@@ -117,7 +118,7 @@ function ready() {
       }
     }
   }, 70);
-  var leaderboardLength = 5;
+    var leaderboardLength = 5;
   firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
     scores.innerHTML = "";
