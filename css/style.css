@@ -117,7 +117,6 @@ table#highscores td.lbrank {
 #TheButton:active {
   box-shadow: 0px 6px 8px rgb(204, 255, 255);
   transform: translateY(3px);
-  background: #00BFFF;
 }
 
 p {
