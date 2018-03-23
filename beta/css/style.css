@@ -109,6 +109,7 @@ table#highscores td.lbrank {
 }
 
 #TheButton-div {
+  display: inline-block;
   padding: 20px;
 }
 
