@@ -1,4 +1,4 @@
-(x=>{
+document.addEventListener("DOMContentLoaded", function(event) { (x=>{
 var lastPress,lu;
 
 function j(user, error) {
@@ -203,8 +203,8 @@ if (location.href.endsWith("?logout")) {
 */
 var linkOverride;
 /*
-  add entries to any desired additional GitHub repos (in “username/repo”
-  format) and live demos to otherRepos
+  add strings to otherRepos (in “username/repo-name” format) as
+  desired to produce additional links for forks
 */
 var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
@@ -212,11 +212,13 @@ window.onload = e => {
   this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + '/' + location.pathname.split('/')[1]);
   is_original = i == 'legend-of-iphoenix';
   tr = 'GitHub repo: <a href="' + this_repo_url + '">' + (is_original ? 'Here' : i + ' (this fork)') + '</a>';
-  if (!is_original) tr += ' | <a href="https://github.com/Legend-of-iPhoenix/TheButton">_iPhoenix_ (original)</a>';
+  if (!is_original) tr += ' | <a href="https://github.com/Legend-of-iPhoenix/TheButton">Legend-of-iPhoenix (original)</a>';
 
   tl = '';
-  if ('legend-of-iphoenix' != i) {
-    tl += '<b>' + i + '</b> | <a href="https://legend-of-iphoenix.github.io/TheButton/">iPhoenix</a>';
+  if (!is_original) {
+    tl += '<b>' + i + '</b> | <a href="https://legend-of-iphoenix.github.io/TheButton/">Legend-of-iPhoenix</a>';
+  } else if (otherRepos.length) {
+    tl += '<b>' + i + '</b>';
   }
   for (i=0; i<otherRepos.length; i++) {
     repo = otherRepos[i].split('/');
@@ -237,3 +239,4 @@ window.onload = e => {
   }
 }
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
+});
