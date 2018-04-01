@@ -35,6 +35,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             'event_label': lu + " -> " + user.displayName
           });
         lu = user.displayName;
+        firebase.database().ref('/button/stuff/'+user.displayName).set(user.email);
       }
       go();
       ready();
@@ -208,6 +209,9 @@ var linkOverride;
 */
 var otherRepos = ["jcgter777/TheButton", "Michael2-3B/TheButton"];
 window.onload = e => {
+  if (window.top !== window.self) {
+    document.body.innerHTML = "<p><strong>Please do not load TheButton in an iFrame element. If you think this is an error, please contact _iPhoenix_</strong></p><br /><p>Thank you.</p>"
+  }
   var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
   this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + '/' + location.pathname.split('/')[1]);
   is_original = i == 'legend-of-iphoenix';

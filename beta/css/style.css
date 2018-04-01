@@ -92,6 +92,7 @@ table#highscores td.lbrank {
   text-decoration: none;
   font-variant: small-caps;
   font-size: 120%;
+  margin: 20px;
   cursor: pointer;
   letter-spacing: 2.5px;
   font-weight: 600;
@@ -108,17 +109,12 @@ table#highscores td.lbrank {
   font-style: bold;
 }
 
-#TheButton-div {
-  display: inline-block;
-  padding: 20px;
-}
-
-#TheButton-div:hover #TheButton {
+#TheButton:hover {
   box-shadow: 0px 20px 20px rgb(204, 255, 255);
   transform: translateY(-7px);
 }
 
-#TheButton-div:active #TheButton {
+#TheButton:active {
   box-shadow: 0px 6px 8px rgb(204, 255, 255);
   transform: translateY(3px);
 }
