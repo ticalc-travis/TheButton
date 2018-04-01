@@ -140,3 +140,38 @@ strong {
   cursor: auto;
   border-radius: 5px;
 }
+
+input#iChat-input {
+  width: 60ex;
+  margin: .5ex;
+}
+
+div#iChat-messages {
+  overflow: scroll;
+  width: 60ex;
+  height: 30ex;
+  border: solid thin black;
+  padding: .4ex;
+}
+
+div#iChat-messages p {
+  text-align: left;
+  font-weight: bold;
+}
+
+span.iChat-timestamp {
+  font-family: monospace;
+  font-weight: bold;
+  background-color: #eef;
+  color: #66b;
+}
+
+span.iChat-username {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 0 0 .5ex;
+}
+
+span.iChat-text {
+  font-weight: normal;
+}
