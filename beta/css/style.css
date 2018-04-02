@@ -114,12 +114,12 @@ table#highscores td.lbrank {
 }
 
 #TheButton-div:hover #TheButton {
-  box-shadow: 0px 20px 20px rgb(204, 255, 255);
+  box-shadow: 0px 20px 20px #f4f4f4;
   transform: translateY(-7px);
 }
 
 #TheButton-div:active #TheButton {
-  box-shadow: 0px 6px 8px rgb(204, 255, 255);
+  box-shadow: 0px 6px 8px #f4f4f4;
   transform: translateY(3px);
 }
 
