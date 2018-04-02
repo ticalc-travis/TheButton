@@ -120,7 +120,7 @@ function ready() {
     var theButton = document.getElementById("TheButton");
     if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
     if (theButton.classList.contains("lighted")) {
-      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle+=4 % 360) + ", 100%, 80%)";
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle+=4 % 360) + ", 100%, 85%)";
     }
   }, 100);
   var leaderboardLength = 5;
