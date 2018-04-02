@@ -104,7 +104,7 @@ function ready() {
       var length = span.innerText.length;
       span.innerText.split('').forEach(function (char, index) {
         var h = Math.floor((360 * (index + offset)) / length) % 360;
-        innerString += '<span style="color: hsl(' + h + ', 100%, 85%);">' + char + "</span>";
+        innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
       });
       span.innerHTML = innerString;
       theButton.classList.add("lighted");
@@ -122,8 +122,8 @@ function ready() {
     if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
     if (theButton.classList.contains("lighted")) {
       buttonRainbowBG.cycle += 4;
-      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 60%)";
-      theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 75%)";
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
+      theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
     }
   }, 100);
   var leaderboardLength = 5;
