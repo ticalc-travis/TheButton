@@ -96,6 +96,7 @@ function ready() {
   });
   setInterval(function () {
     var span = document.getElementsByClassName('rainbow')[0];
+    var theButton = document.getElementById("TheButton");
     if(lastPress.u==username) {
       var length = span.innerText.length;
       var offset = span.id++;
@@ -106,14 +107,16 @@ function ready() {
         innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
       });
       span.innerHTML = innerString;
-      if (!document.getElementById("TheButton").classList.contains("lighted")) {
-        document.getElementById("TheButton").classList.add("lighted");
-        document.getElementById("TheButton").style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
+      if (!theButton.classList.contains("lighted")) {
+        theButton.classList.add("lighted");
+        theButton.style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
       }
     } else {
       span.innerHTML = span.innerText;
-      document.getElementById("TheButton").classList.remove("lighted");
-      document.getElementById("TheButton").style.backgroundColor = null;
+      if (theButton.classList.contains("lighted")) {
+        theButton.classList.remove("lighted");
+        theButton.style.backgroundColor = null;
+      }
     }
   }, 70);
   var leaderboardLength = 5;
