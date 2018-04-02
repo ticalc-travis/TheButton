@@ -107,16 +107,20 @@ function ready() {
         innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
       });
       span.innerHTML = innerString;
-      if (!theButton.classList.contains("lighted")) {
-        theButton.classList.add("lighted");
-        theButton.style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
-      }
+      theButton.classList.add("lighted");
     } else {
       span.innerHTML = span.innerText;
       if (theButton.classList.contains("lighted")) {
         theButton.classList.remove("lighted");
         theButton.style.backgroundColor = null;
       }
+    }
+  }, 70);
+  setInterval(function buttonRainbowBG () {
+    var theButton = document.getElementById("TheButton");
+    if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
+    if (theButton.classList.contains("lighted")) {
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle++ % 360) + ", 100%, 70%)";
     }
   }, 70);
   var leaderboardLength = 5;
