@@ -96,6 +96,7 @@ function ready() {
   });
   setInterval(function () {
     var span = document.getElementsByClassName('rainbow')[0];
+    var theButton = document.getElementById("TheButton");
     if(lastPress.u==username) {
       var length = span.innerText.length;
       var offset = span.id++;
@@ -106,19 +107,25 @@ function ready() {
         innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
       });
       span.innerHTML = innerString;
-      if (!document.getElementById("TheButton").className.match(/(^|\s)lighted($|\s)/)) {
-        document.getElementById("TheButton").className += " lighted";
-        document.getElementById("TheButton").style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
-      }
+      theButton.classList.add("lighted");
     } else {
       span.innerHTML = span.innerText;
-      if (document.getElementById("TheButton").className.match(/(^|\s)lighted($|\s)/)) {
-        document.getElementById("TheButton").className =
-          document.getElementById("TheButton").className.replace(/(^|\s)lighted($|\s)/g, ' ');
-        document.getElementById("TheButton").style.backgroundColor = null;
+      if (theButton.classList.contains("lighted")) {
+        theButton.classList.remove("lighted");
+        theButton.style.backgroundColor = null;
+        theButton.style.boxShadow = null;
       }
     }
-  }, 70);
+  }, 100);
+  setInterval(function buttonRainbowBG () {
+    var theButton = document.getElementById("TheButton");
+    if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
+    if (theButton.classList.contains("lighted")) {
+      buttonRainbowBG.cycle += 3;
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
+      theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
+    }
+  }, 100);
   var leaderboardLength = 5;
   firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
