@@ -121,7 +121,7 @@ function ready() {
     var theButton = document.getElementById("TheButton");
     if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
     if (theButton.classList.contains("lighted")) {
-      buttonRainbowBG.cycle += 4;
+      buttonRainbowBG.cycle += 3;
       theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
       theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
     }
