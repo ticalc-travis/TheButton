@@ -106,8 +106,10 @@ function ready() {
         innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
       });
       span.innerHTML = innerString;
-      document.getElementById("TheButton").classList.add("lighted");
-      document.getElementById("TheButton").style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
+      if (!document.getElementById("TheButton").classList.contains("lighted")) {
+        document.getElementById("TheButton").classList.add("lighted");
+        document.getElementById("TheButton").style.backgroundColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 70%)";
+      }
     } else {
       span.innerHTML = span.innerText;
       document.getElementById("TheButton").classList.remove("lighted");
