@@ -115,14 +115,14 @@ function ready() {
         theButton.style.backgroundColor = null;
       }
     }
-  }, 70);
+  }, 100);
   setInterval(function buttonRainbowBG () {
     var theButton = document.getElementById("TheButton");
     if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
     if (theButton.classList.contains("lighted")) {
-      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle++ % 360) + ", 100%, 70%)";
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle+=2 % 360) + ", 100%, 70%)";
     }
-  }, 70);
+  }, 100);
   var leaderboardLength = 5;
   firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value',function(snapshot) {
     var scores = document.getElementById("highscores");
