@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     location.href = location.href.replace(location.search, '');
   }
   /*
-    set linkOverride to the url of your GitHub Repo if you plan on 
+    set linkOverride to the url of your GitHub Repo if you plan on
     publishing your site and the auto-generated github link doesn't
     work.
   */
