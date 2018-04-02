@@ -3,6 +3,22 @@
   margin: auto auto;
 }
 
+a {
+  color: blue;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+body.night-mode a {
+  color: #aaf;
+}
+
+body.night-mode a:visited {
+  color: #faf;
+}
+
 .hidden {
   display: none;
   visibility: hidden;
@@ -28,6 +44,11 @@ body {
   background-color: #fff;
 }
 
+body.night-mode {
+  background-color: black;
+  color: #fff;
+}
+
 div#main-div {
   text-align: center;
 }
@@ -50,6 +71,10 @@ table#highscores {
   border-spacing: 7px 3px;
 }
 
+body.night-mode table#highscores {
+  background-color: #222;
+}
+
 table#highscores tr {
   transition: all .1s;
 }
@@ -63,8 +88,16 @@ table#highscores tr:hover {
   font-weight: 300;
 }
 
+body.night-mode table#highscores tr:hover {
+  background-color: #444;
+}
+
 table#highscores th {
   border-bottom: 1px solid black;
+}
+
+body.night-mode table#highscores th {
+  border-bottom: 1px solid white;
 }
 
 table#highscores .lbusername {
@@ -104,6 +137,12 @@ table#highscores td.lbrank {
           box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
+body.night-mode #TheButton {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+}
+
 #TheButton.lighted {
   font-style: bold;
   box-shadow: 0px 20px 20px #f4f4f4;
@@ -120,9 +159,17 @@ table#highscores td.lbrank {
   transform: translateY(-7px);
 }
 
+body.night-mode #TheButton-div:hover #TheButton {
+  box-shadow: 0px 20px 20px #333;
+}
+
 #TheButton-div:active #TheButton {
   box-shadow: 0px 6px 8px #f4f4f4;
   transform: translateY(3px);
+}
+
+body.night-mode #TheButton-div:active #TheButton {
+  box-shadow: 0px 6px 8px #111;
 }
 
 p {
@@ -160,6 +207,10 @@ div#iChat-messages {
   padding: .4ex;
 }
 
+body.night-mode div#iChat-messages {
+  border: solid thin white;
+}
+
 div#iChat-messages p {
   text-align: left;
   font-weight: bold;
@@ -170,6 +221,11 @@ span.iChat-timestamp {
   font-weight: bold;
   background-color: #eef;
   color: #66b;
+}
+
+body.night-mode span.iChat-timestamp {
+  background-color: #226;
+  color: #88f;
 }
 
 span.iChat-username {
