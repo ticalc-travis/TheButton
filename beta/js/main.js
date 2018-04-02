@@ -113,6 +113,7 @@ function ready() {
       if (theButton.classList.contains("lighted")) {
         theButton.classList.remove("lighted");
         theButton.style.backgroundColor = null;
+        theButton.style.boxShadow = null;
       }
     }
   }, 100);
@@ -120,7 +121,9 @@ function ready() {
     var theButton = document.getElementById("TheButton");
     if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
     if (theButton.classList.contains("lighted")) {
-      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle+=4 % 360) + ", 100%, 85%)";
+      buttonRainbowBG.cycle += 4;
+      theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
+      theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 50%)";
     }
   }, 100);
   var leaderboardLength = 5;
