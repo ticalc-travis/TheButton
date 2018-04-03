@@ -34,25 +34,11 @@ var lightButtonEnabled = false;
     document.getElementById('login-div').classList = 'visible';
   }
   
-  (function() {
-  function toggleNightMode() {
-    var elem = document.getElementById(this.dataset.target);
-    
-    if (this.dataset.mode === 'off') {
-      elem.style.color = '#000';
-      elem.style.backgroundColor = '#fff';
-      elem.style.fontFamily = 'Ubuntu, sans-serif';
-      this.dataset.mode = 'on';
-    } else {
-      elem.style.color = '#fff';
-      elem.style.backgroundColor = '#000';
-      elem.style.fontFamily = '"Ubuntu", sans-serif';
-      this.dataset.mode = 'off';
-    }
+  function togglenightmode() {
+    var element = document.getElementById("body");
+    element.classList.toggle("nightmode");
   }
-  
-  document.getElementById('togBut').addEventListener('click', toggleNightMode);
-})();
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       if (user.photoURL == "https://legend-of-iphoenix.github.io/TheButton/img/authenticated.png" && /^\w{1,32}$/.test(user.displayName) && user.displayName) {
