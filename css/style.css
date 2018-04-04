@@ -237,3 +237,11 @@ span.iChat-username {
 span.iChat-text {
   font-weight: normal;
 }
+
+.iChat-highlight {
+  background-color: #ffa;
+}
+
+body.night-mode .iChat-highlight {
+  background-color: #600;
+}
