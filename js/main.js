@@ -33,11 +33,6 @@ document.addEventListener("DOMContentLoaded", function(event) { (x=>{
     document.getElementById('logout-span').classList = 'hidden';
     document.getElementById('login-div').classList = 'visible';
   }
-  
-  function togglenightmode() {
-    var element = document.getElementById("body");
-    element.classList.toggle("nightmode");
-  }
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
