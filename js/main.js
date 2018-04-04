@@ -166,9 +166,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })(document.getElementById("highscores"));
       scores.innerHTML = "<tr><th class=\"lbrank\">&nbsp;</th><th class=\"lbusername\">Username</th><th class=\"lbtime\">Time</th></tr>" + scores.innerHTML;
     });
-    document.getElementById("TheButton").click = x => console.log("Abuse is not tolerated.");
+    document.getElementById("TheButton-div").click = x => console.log("Abuse is not tolerated.");
     document.getElementById("TheButton").onfocus = x => document.getElementById("TheButton").blur();
-    document.getElementById('TheButton').onclick = function (event) {
+    document.getElementById('TheButton-div').onclick = function (event) {
       if (firebase.auth().currentUser.displayName != lastPress.u) {
         getReliableTimestamp(function (TIMESTAMP) {
           if (TIMESTAMP >= 500 + lastPress.t) {
