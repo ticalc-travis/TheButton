@@ -113,8 +113,8 @@ table#highscores tr td.lbusername:hover {
   width: 400px;
   height: 55px;
   transition: all .2s;
-  color: #000;
-  background-color: #ededed;
+  color: #000 !important;
+  background-color: #ededed !important;
   padding: 10px 30px;
   border: none;
   vertical-align: center;
@@ -137,6 +137,9 @@ table#highscores tr td.lbusername:hover {
 
 #TheButton.lighted {
   box-shadow: 0px 20px 20px;
+}
+#TheButton.night-mode {
+  color: #000;
 }
 
 #TheButton-div {
