@@ -139,10 +139,6 @@ table#highscores tr td.lbusername:hover {
   box-shadow: 0px 20px 20px;
 }
 
-#TheButton.night-mode {
-  color: #000;
-}
-
 #TheButton-div {
   display: inline-block;
   padding: 5px;
