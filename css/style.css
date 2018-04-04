@@ -359,7 +359,7 @@ span.iChat-text {
   background: black;
   color: white;
   cursor: pointer;
-  transform: translateY(-3px); 
+  transform: translateY(-5px); 
 }
 
 #togBut:active {
