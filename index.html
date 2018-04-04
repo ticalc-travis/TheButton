@@ -18,7 +18,7 @@ firebase.initializeApp({apiKey: "AIzaSyC-Jm0sMAlcsur-z4yS3cY0XdrR1F9WjGw",authDo
 	<base target="_blank">
 </head>
 <body id="body">
-	<button id="togBut" data-target="body" data-mode="on">Toggle Night Mode</button>
+	<button id="togBut" onclick="document.body.classList.toggle('night-mode')">Toggle Night Mode</button>
 	<h1 id="title">TheButton</h1>
 	<div class='visible' id='login-div'>
 		<p> TheButton is a King-of-the-Hill-esque game where the username of the last person to click a button is broadcast to everyone.</p>
