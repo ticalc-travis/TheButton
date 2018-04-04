@@ -13,10 +13,17 @@
   visibility: visible;
 }
 
-body.night-mode {
-  background: black;
+body.nightmode {
   -webkit-filter: invert(1) hue-rotate(180deg);
   filter: invert(1) hue-rotate(180deg);
+}
+
+body.nightmode {
+  background: black;
+}
+
+#TheButton.night-mode {
+  color: #000;
 }
 
 span.visible {
