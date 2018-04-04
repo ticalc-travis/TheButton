@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     add strings to otherRepos (in “username/repo-name” format) as
     desired to produce additional links for forks
   */
-  var otherRepos = ["jcgter777/TheButton"];
+  var otherRepos = ["jcgter777/TheButton", "battlesquid/TheButton"];
   window.onload = e => {
     if (window.top !== window.self) {
       document.body.innerHTML = "<p><strong>Please do not load TheButton in an iFrame element. If you think this is an error, please contact _iPhoenix_</strong></p><br /><p>Thank you.</p>"
