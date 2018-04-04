@@ -347,6 +347,8 @@ span.iChat-text {
 
 .iChat-highlight {
   font-weight: bold;
+  background-color: black;
+  color: white;
 }
 
 #togBut {
@@ -356,7 +358,7 @@ span.iChat-text {
   padding: 5px; 
 
 
-#togBut:hover {
+#togBut:active {
   background: black;
   color: white;
   cursor: pointer;
