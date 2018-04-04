@@ -352,6 +352,7 @@ span.iChat-text {
   border-radius: 25px;
   background: #DCDCDC;
   padding: 5px; 
+  transition: all 0.2s ease 0s;
 }
 
 #togBut:hover {
