@@ -120,7 +120,7 @@ table#highscores tr td.lbusername:hover {
   color: #000;
   background-color: #ededed !important;
   padding: 10px 30px;
-  border: none;
+  border: 1px solid white;
   vertical-align: center;
   text-align: center;
   text-decoration: none;
