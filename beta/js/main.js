@@ -1,5 +1,5 @@
 var lightButtonEnabled = false;
-(x => {
+document.addEventListener("DOMContentLoaded", function(event) { (x=>{
   var lastPress, lu;
 
   function j(user, error) {
@@ -32,11 +32,6 @@ var lightButtonEnabled = false;
     document.getElementById('main-div').classList = 'hidden';
     document.getElementById('logout-span').classList = 'hidden';
     document.getElementById('login-div').classList = 'visible';
-  }
-  
-  function togglenightmode() {
-    var element = document.getElementById("body");
-    element.classList.toggle("nightmode");
   }
 
   firebase.auth().onAuthStateChanged(function (user) {
@@ -272,3 +267,4 @@ var lightButtonEnabled = false;
     }
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
+});
