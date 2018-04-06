@@ -7,16 +7,6 @@ html {
   /* 2 */
 }
 
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-}
-
-pre {
-  overflow: auto;
-}
-
 button,
 textarea {
   color: inherit;
@@ -34,11 +24,6 @@ button {
 button,
 select {
   text-transform: none;
-}
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
 }
 
 button::-moz-focus-inner,
