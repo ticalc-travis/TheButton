@@ -1,20 +1,12 @@
 html {
-  font-family: sans-serif;
-  /* 1 */
   -ms-text-size-adjust: 100%;
-  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
 }
 
 button,
 textarea {
   color: inherit;
-  /* 1 */
   font: inherit;
-  /* 2 */
-  margin: 0;
-  /* 3 */
 }
 
 button {
@@ -41,7 +33,7 @@ textarea {
 }
 
 table {
-/*  border-collapse: collapse; */
+  border-collapse: collapse;
   border-spacing: 0;
 }
 
@@ -66,52 +58,12 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.hoverable {
-  -webkit-transition: -webkit-box-shadow .25s;
-  transition: -webkit-box-shadow .25s;
-  transition: box-shadow .25s;
-  transition: box-shadow .25s, -webkit-box-shadow .25s;
-}
-
-.hoverable:hover {
-  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
 table, th, td {
   border: none;
 }
 
 table {
-  width: 100%;
   display: table;
-}
-
-table.bordered > thead > tr,
-table.bordered > tbody > tr {
-  border-bottom: 1px solid #d0d0d0;
-}
-
-table.striped > tbody > tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
-
-table.striped > tbody > tr > td {
-  border-radius: 0;
-}
-
-table.highlight > tbody > tr {
-  -webkit-transition: background-color .25s ease;
-  transition: background-color .25s ease;
-}
-
-table.highlight > tbody > tr:hover {
-  background-color: #f2f2f2;
-}
-
-table.centered thead tr th, table.centered tbody tr td {
-  text-align: center;
 }
 
 thead {
@@ -126,157 +78,9 @@ td, th {
   border-radius: 2px;
 }
 
-@media only screen and (max-width: 992px) {
-  table.responsive-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    display: block;
-    position: relative;
-    /* sort out borders */
-  }
-  table.responsive-table td:empty:before {
-    content: '\00a0';
-  }
-  table.responsive-table th,
-  table.responsive-table td {
-    margin: 0;
-    vertical-align: top;
-  }
-  table.responsive-table th {
-    text-align: left;
-  }
-  table.responsive-table thead {
-    display: block;
-    float: left;
-  }
-  table.responsive-table thead tr {
-    display: block;
-    padding: 0 10px 0 0;
-  }
-  table.responsive-table thead tr th::before {
-    content: "\00a0";
-  }
-  table.responsive-table tbody {
-    display: block;
-    width: auto;
-    position: relative;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  table.responsive-table tbody tr {
-    display: inline-block;
-    vertical-align: top;
-  }
-  table.responsive-table th {
-    display: block;
-    text-align: right;
-  }
-  table.responsive-table td {
-    display: block;
-    min-height: 1.25em;
-    text-align: left;
-  }
-  table.responsive-table tr {
-    padding: 0 10px;
-  }
-  table.responsive-table thead {
-    border: 0;
-    border-right: 1px solid #d0d0d0;
-  }
-  table.responsive-table.bordered th {
-    border-bottom: 0;
-    border-left: 0;
-  }
-  table.responsive-table.bordered td {
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-  }
-  table.responsive-table.bordered tr {
-    border: 0;
-  }
-  table.responsive-table.bordered tbody tr {
-    border-right: 1px solid #d0d0d0;
-  }
-}
-
-/*******************
+/******************
   Utility Classes
 *******************/
-.hide {
-  display: none !important;
-}
-
-.left-align {
-  text-align: left;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.center, .center-align {
-  text-align: center;
-}
-
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-span.badge {
-  min-width: 3rem;
-  padding: 0 6px;
-  margin-left: 14px;
-  text-align: center;
-  font-size: 1rem;
-  line-height: 22px;
-  height: 22px;
-  color: #757575;
-  float: right;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-span.badge.new {
-  font-weight: 300;
-  font-size: 0.8rem;
-  color: #fff;
-  background-color: #26a69a;
-  border-radius: 2px;
-}
-
-span.badge.new:after {
-  content: " new";
-}
-
-span.badge[data-badge-caption]::after {
-  content: " " attr(data-badge-caption);
-}
-
-.collection-item span.badge {
-  margin-top: calc(0.75rem - 11px);
-}
-
-.collapsible span.badge {
-  margin-left: auto;
-}
-
-/* This is needed for some mobile phones to display the Google Icon font properly */
-.material-icons {
-  text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: 'liga';
-     -moz-font-feature-settings: 'liga';
-          font-feature-settings: 'liga';
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
-}
 
 a {
   text-decoration: none;
@@ -291,29 +95,20 @@ html {
 
 @media only screen and (min-width: 0) {
   html {
-    font-size: 14px;
+    font-size: 13px; /* was 14 */
   }
 }
 
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 14.5px;
+    font-size: 13.5px; /* was 14.5 */
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 14px; /* was 15 */
   }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  font-weight: inherit;
 }
 
 h1 {
@@ -322,29 +117,8 @@ h1 {
   margin: 2.1rem 0 1.68rem 0;
 }
 
-em {
-  font-style: italic;
-}
-
 small {
   font-size: 75%;
-}
-
-.thin {
-  font-weight: 200;
-}
-
-.flow-text {
-  font-weight: 300;
-}
-
-select:focus {
-  outline: 1px solid #c9f3ef;
-}
-
-button:focus {
-  outline: none;
-  background-color: #2ab7a9;
 }
 
 label {
