@@ -9,7 +9,6 @@ var me = new iChatPlugin("action/me", function (data) {
 var pm = new iChatPlugin("action/pm", function (data) {
   if (data.txt.startsWith("/pm ")) {
     var recipient = data.txt.match(/(\S+)/g)[1];
-    console.log(recipient);
     if (data.u === firebase.auth().currentUser.displayName) {
       data.u = "[ You => " + recipient + "]";
       data.txt = data.txt.substring(4 + recipient.length);
@@ -22,7 +21,6 @@ var pm = new iChatPlugin("action/pm", function (data) {
       }
     }
   }
-  console.log(data);
   return data;
 }, "Written by _iPhoenix_");
 
