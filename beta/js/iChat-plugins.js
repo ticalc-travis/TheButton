@@ -14,7 +14,7 @@ var pm = new iChatPlugin("action/pm", function (data) {
       data.txt = data.txt.substring(4 + recipient.length);
     } else {
       if (firebase.auth().currentUser.displayName === recipient) {
-        data.u = "[ " + data.un + " => You ]";
+        data.u = "[ " + data.u + " => You ]";
         data.txt.substring(4 + recipient.length);
       } else {
         data.txt = "";
