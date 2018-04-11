@@ -58,7 +58,7 @@ div#footer {
 }
 
 #title {
-  margin-top: 20px; 
+  margin-top: 20px;
   font-weight: 600;
   text-align: center;
 }
@@ -145,7 +145,7 @@ body.night-mode #TheButton {
 
 #TheButton.lighted {
   font-style: bold;
-  box-shadow: 0px 20px 20px #f4f4f4;
+  box-shadow: 0px 20px 20px;
 }
 
 #TheButton-div {
@@ -173,7 +173,7 @@ body.night-mode #TheButton-div:active #TheButton {
 }
 
 p {
-  text-align: center; 
+  text-align: center;
 }
 
 strong {
@@ -236,4 +236,12 @@ span.iChat-username {
 
 span.iChat-text {
   font-weight: normal;
+}
+
+.iChat-highlight {
+  background-color: #ffa;
+}
+
+body.night-mode .iChat-highlight {
+  background-color: #600;
 }
