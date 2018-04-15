@@ -34,19 +34,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('login-div').classList = 'visible';
   }
 
-  function set_night_mode(state) {
-    if (state == 'true') {
-      document.body.classList.add('night-mode');
-    } else {
-      document.body.classList.remove('night-mode');
-    }
-    localStorage.night_mode = state;
-  }
-
-  function toggle_night_mode() {
-    set_night_mode(localStorage.night_mode == 'true' ? 'false' : 'true')
-  }
-
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       if (user.photoURL == "https://legend-of-iphoenix.github.io/TheButton/img/authenticated.png" && /^\w{1,32}$/.test(user.displayName) && user.displayName) {
@@ -284,3 +271,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
 });
+
+function set_night_mode(state) {
+  if (state == 'true') {
+    document.body.classList.add('night-mode');
+  } else {
+    document.body.classList.remove('night-mode');
+  }
+  localStorage.night_mode = state;
+}
+
+function toggle_night_mode() {
+  set_night_mode(localStorage.night_mode == 'true' ? 'false' : 'true')
+}
