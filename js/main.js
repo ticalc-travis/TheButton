@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function(event) { (x=>{
     add strings to otherRepos (in “username/repo-name” format) as
     desired to produce additional links for forks
   */
-  var otherRepos = ['ticalc-travis/TheButton'];
+  var otherRepos = [];
   window.onload = e => {
     /* iframe protection */
     if (window.top !== window.self) {
