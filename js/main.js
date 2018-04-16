@@ -229,9 +229,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   */
   var otherRepos = ["jcgter777/TheButton", "battlesquid/TheButton"];
   window.onload = e => {
+    /* iframe protection */
     if (window.top !== window.self) {
       document.body.innerHTML = "<p><strong>Please do not load TheButton in an iFrame element. If you think this is an error, please contact _iPhoenix_</strong></p><br /><p>Thank you.</p>"
     }
+
+    /* Repo links */
     var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
       this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + '/' + location.pathname.split('/')[1]);
     is_original = i == 'legend-of-iphoenix';
@@ -261,6 +264,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
       firebase.auth().signOut();
       location.reload();
     }
+
+    /* Persistent configuration */
+    if (typeof(localStorage.night_mode) == 'undefined') localStorage.night_mode = 'false';
+    set_night_mode(localStorage.night_mode);
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
 });
+
+function set_night_mode(state) {
+  if (state == 'true') {
+    document.body.classList.add('night-mode');
+  } else {
+    document.body.classList.remove('night-mode');
+  }
+  localStorage.night_mode = state;
+}
+
+function toggle_night_mode() {
+  set_night_mode(localStorage.night_mode == 'true' ? 'false' : 'true')
+}
