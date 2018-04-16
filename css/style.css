@@ -220,7 +220,7 @@ strong {
   background-color: #A9A9A9;  
 }
 
-#repolink {
+.repolink {
   position: relative;
   margin-top: 10px;
   width: 378px;
