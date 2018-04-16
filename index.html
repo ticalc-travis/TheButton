@@ -37,7 +37,7 @@
 </head>
 
 <body id="body">
-  <button id="togBut" onclick="document.body.classList.toggle('night-mode');">Toggle Night Mode</button>
+  <button id="togBut" onclick="toggle_night_mode();">Toggle Night Mode</button>
   <h1 id="title">TheButton</h1>
   <div class='visible' id='login-div'>
     <p> TheButton is a King-of-the-Hill-esque game where the username of the last person to click a button is broadcast to everyone.</p>
@@ -58,8 +58,11 @@
         <th class="lbtime">Time</th>
       </tr>
     </table>
-    <p id="repolink">GitHub Repos: <input id="thisfork" type="button" value="This fork" onclick="window.location.href='https://github.com/jcgter777/TheButton'" /> | <input id="original" type="button" value="Original by iPhoenix" onclick="window.location.href='https://github.com/Legend-of-iPhoenix/TheButton'" /></p>
-    <p id="abouttbgc"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a>|<button id="togglebgc" onclick="lightButtonEnabled=!lightButtonEnabled;">Toggle Background Color changing</button></p>
+    <div class="repolink">
+      <p id="repolink">GitHub Repos: <input id="thisfork" type="button" value="This fork" onclick="window.location.href='https://github.com/jcgter777/TheButton'" /> | <input id="original" type="button" value="Original by iPhoenix" onclick="window.location.href='https://github.com/Legend-of-iPhoenix/TheButton'" /></p>
+      <p id="livelink"></p>
+    </div>
+    <p id="abouttbgc"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a>|<button id="togglebgc" onclick="toggle_light_button();">Toggle Background Color changing</button></p>
     <p id="logoutline"><span id="logout-span" class="hidden"><button id="logout" onclick="firebase.auth().signOut(); location.reload();">Log out</button></span></p>
 
     <!-- iChat stuff here -->
