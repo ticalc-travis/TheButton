@@ -1,4 +1,25 @@
-var lightButtonEnabled = false;
+const DEFAULT_CONFIG = {'night_mode': false, 'light_button': false};
+var config = null;
+
+function set_night_mode(state) {
+  if (state) {
+    document.body.classList.add('night-mode');
+  } else {
+    document.body.classList.remove('night-mode');
+  }
+  config['night_mode'] = state;
+  localStorage.thebutton_config = JSON.stringify(config);
+}
+
+function toggle_night_mode() {
+  set_night_mode(!config['night_mode']);
+}
+
+function toggle_light_button() {
+  config['light_button'] = !config['light_button'];
+  localStorage.thebutton_config = JSON.stringify(config);
+}
+
 document.addEventListener("DOMContentLoaded", function(event) { (x=>{
   var lastPress, lu;
 
@@ -118,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function(event) { (x=>{
           innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
         });
         span.innerHTML = innerString;
-        lightButton = lightButtonEnabled;
+        lightButton = config['light_button'];
       } else {
         span.innerHTML = span.innerText;
         lightButton = false;
@@ -235,9 +256,12 @@ document.addEventListener("DOMContentLoaded", function(event) { (x=>{
   */
   var otherRepos = [];
   window.onload = e => {
+    /* iframe protection */
     if (window.top !== window.self) {
       document.body.innerHTML = "<p><strong>Please do not load TheButton in an iFrame element. If you think this is an error, please contact _iPhoenix_</strong></p><br /><p>Thank you.</p>"
     }
+
+    /* Repo links */
     var i = location.hostname.split("").reverse().join("").substring(10).split("").reverse().join(""),
       this_repo_url = (linkOverride ? linkOverride : 'https://github.com/' + i + '/' + location.pathname.split('/')[1]);
     is_original = i == 'legend-of-iphoenix';
@@ -261,6 +285,13 @@ document.addEventListener("DOMContentLoaded", function(event) { (x=>{
     } else {
       document.getElementById("livelink").remove();
     }
+
+    /* Persistent config data */
+    if (typeof(localStorage.thebutton_config) == 'undefined') {
+      localStorage.thebutton_config = JSON.stringify(DEFAULT_CONFIG);
+    }
+    config = JSON.parse(localStorage.thebutton_config);
+    set_night_mode(config['night_mode']);
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
 });
