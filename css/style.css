@@ -355,7 +355,8 @@ span.iChat-text {
 }
 
 .iChat-timestamp::after {
-  content: "] ";
+  content: "]";
+  margin-right: 1ex;
 }
 
 .iChat-username::after {
