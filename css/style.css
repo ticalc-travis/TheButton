@@ -329,6 +329,8 @@ span.iChat-username {
   display: inline-block;
   font-weight: bold;
   margin: 0 0 0 .5ex;
+  
+  padding-left: 2ex;
 }
 
 span.iChat-text {
@@ -348,6 +350,18 @@ span.iChat-text {
   font-weight: bold;
   background-color: black;
   color: white;
+}
+
+.iChat-timestamp::before {
+  content: "[";
+}
+
+.iChat-timestamp::after {
+  content: "] ";
+}
+
+.iChat-username::after {
+  content: ":  ";
 }
 
 #togBut {
