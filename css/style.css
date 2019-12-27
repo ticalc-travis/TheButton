@@ -306,7 +306,7 @@ input#iChat-input {
 div#iChat-messages {
   overflow: scroll;
   width: 60ex;
-  height: 10ex;
+  height: 30ex;
   border: solid thin black;
   padding: .4ex;
   cursor: pointer;
