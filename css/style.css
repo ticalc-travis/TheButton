@@ -234,7 +234,7 @@ span.iChat-username {
   margin: 0 0 0 .5ex;
 }
 
-span.iChat-usename::after {
+span.iChat-username::after {
   content: ":";
   margin-right: .5ex;
 }
