@@ -172,6 +172,21 @@ body.night-mode #TheButton-div:active #TheButton {
   box-shadow: 0px 6px 8px #111;
 }
 
+#options {
+    display: inline-block;
+    margin-top: 1ex;
+    padding: .1em .5em .1em .5em;
+    background-color: #f4f4f4;
+}
+
+body.night-mode #options {
+    background-color: #222;
+}
+
+#options input {
+    margin-left: 1em;
+}
+
 p {
   text-align: center;
 }

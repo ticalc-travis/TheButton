@@ -2,6 +2,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 (x=>{
   var lastPress,lu;
 
+  /* Initialize persistent configuration */
+  if (typeof(localStorage.night_mode) == 'undefined') localStorage.night_mode = 'false';
+  set_night_mode(localStorage.night_mode);
+
+  /* Initialize option checkboxes */
+  var night_chk = document.getElementById('night-mode-toggle');
+  night_chk.checked =
+    localStorage.night_mode == 'true' ? true : false;
+  night_chk.addEventListener('change', () => {
+    set_night_mode(night_chk.checked ? 'true' : 'false');
+  });
+
   function j(user, error) {
     var nextName = prompt("Please select a username: " + (error || ""));
     if (/^\w{1,32}$/.test(nextName) && nextName) {
@@ -265,9 +277,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       location.reload();
     }
 
-    /* Persistent configuration */
-    if (typeof(localStorage.night_mode) == 'undefined') localStorage.night_mode = 'false';
-    set_night_mode(localStorage.night_mode);
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
 });
