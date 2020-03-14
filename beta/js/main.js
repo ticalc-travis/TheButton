@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }, 100);
     // </copyright>
-    var leaderboardLength = 5;
+    var leaderboardLength = 10;
     firebase.database().ref("/button/users/").orderByValue().limitToLast(leaderboardLength).on('value', function (snapshot) {
       var scores = document.getElementById("highscores");
       scores.innerHTML = "";
