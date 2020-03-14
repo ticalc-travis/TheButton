@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (typeof(localStorage.night_mode) == 'undefined')
     localStorage.night_mode = 'false';
   set_night_mode(localStorage.night_mode);
+  if (typeof(localStorage.animation) == 'undefined')
+    localStorage.animation = 'true';
 
   /* Initialize option checkboxes */
   var night_chk = document.getElementById('night-mode-toggle');
@@ -13,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     localStorage.night_mode == 'true' ? true : false;
   night_chk.addEventListener('change', () => {
     set_night_mode(night_chk.checked ? 'true' : 'false');
+  });
+  var anim_chk = document.getElementById('night-mode-toggle');
+  anim_chk.checked =
+    localStorage.night_mode == 'true' ? true : false;
+  anim_chk.addEventListener('change', () => {
+    set_night_mode(anim_chk.checked ? 'true' : 'false');
   });
 
   function j(user, error) {
@@ -122,14 +130,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var span = document.getElementsByClassName('rainbow')[0];
       var theButton = document.getElementById("TheButton");
       if (lastPress.u == username) {
-        var length = span.innerText.length;
-        var offset = span.id++;
-        var innerString = '';
-        span.innerText.split('').forEach(function (char, index) {
-          var h = Math.floor((360 * (index + offset)) / length) % 360;
-          innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
-        });
-        span.innerHTML = innerString;
+        if (localStorage.animation == 'true') {
+          var length = span.innerText.length;
+          var offset = span.id++;
+          var innerString = '';
+          span.innerText.split('').forEach(function (char, index) {
+            var h = Math.floor((360 * (index + offset)) / length) % 360;
+            innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
+          });
+          span.innerHTML = innerString;
+        }
         theButton.classList.add("lighted");
       } else {
         span.innerHTML = span.innerText;
@@ -143,7 +153,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     setInterval(function buttonRainbowBG () {
       var theButton = document.getElementById("TheButton");
       if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
-      if (theButton.classList.contains("lighted")) {
+      if (localStorage.animation == 'true' &&
+          theButton.classList.contains("lighted")) {
         buttonRainbowBG.cycle += 3;
         theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
         theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
@@ -289,8 +300,4 @@ function set_night_mode(state) {
     document.body.classList.remove('night-mode');
   }
   localStorage.night_mode = state;
-}
-
-function toggle_night_mode() {
-  set_night_mode(localStorage.night_mode == 'true' ? 'false' : 'true')
 }
