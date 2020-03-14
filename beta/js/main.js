@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   anim_chk.checked =
     localStorage.animation == 'true' ? true : false;
   anim_chk.addEventListener('change', () => {
-    set_night_mode(anim_chk.checked ? 'true' : 'false');
+    localStorage.animation = anim_chk.checked ? 'true' : 'false';
   });
 
   function j(user, error) {
