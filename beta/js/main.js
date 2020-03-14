@@ -139,6 +139,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
           });
           span.innerHTML = innerString;
+        } else {
+          span.innerHTML = span.innerText;
+          theButton.style.backgroundColor = null;
+          theButton.style.boxShadow = null;
         }
         theButton.classList.add("lighted");
       } else {
