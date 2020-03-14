@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   night_chk.addEventListener('change', () => {
     set_night_mode(night_chk.checked ? 'true' : 'false');
   });
-  var anim_chk = document.getElementById('night-mode-toggle');
+  var anim_chk = document.getElementById('animation-toggle');
   anim_chk.checked =
     localStorage.night_mode == 'true' ? true : false;
   anim_chk.addEventListener('change', () => {
