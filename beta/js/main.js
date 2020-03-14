@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var lastPress,lu;
 
   /* Initialize persistent configuration */
-  if (typeof(localStorage.night_mode) == 'undefined') localStorage.night_mode = 'false';
+  if (typeof(localStorage.night_mode) == 'undefined')
+    localStorage.night_mode = 'false';
   set_night_mode(localStorage.night_mode);
 
   /* Initialize option checkboxes */
