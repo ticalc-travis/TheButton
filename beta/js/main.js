@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   var anim_chk = document.getElementById('animation-toggle');
   anim_chk.checked =
-    localStorage.night_mode == 'true' ? true : false;
+    localStorage.animation == 'true' ? true : false;
   anim_chk.addEventListener('change', () => {
     set_night_mode(anim_chk.checked ? 'true' : 'false');
   });
