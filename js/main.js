@@ -2,6 +2,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 (x=>{
   var lastPress,lu;
 
+  /* Initialize persistent configuration */
+  if (typeof(localStorage.night_mode) == 'undefined')
+    localStorage.night_mode = 'false';
+  set_night_mode(localStorage.night_mode);
+  if (typeof(localStorage.animation) == 'undefined')
+    localStorage.animation = 'true';
+
+  /* Initialize option checkboxes */
+  var night_chk = document.getElementById('night-mode-toggle');
+  night_chk.checked =
+    localStorage.night_mode == 'true' ? true : false;
+  night_chk.addEventListener('change', () => {
+    set_night_mode(night_chk.checked ? 'true' : 'false');
+  });
+  var anim_chk = document.getElementById('animation-toggle');
+  anim_chk.checked =
+    localStorage.animation == 'true' ? true : false;
+  anim_chk.addEventListener('change', () => {
+    localStorage.animation = anim_chk.checked ? 'true' : 'false';
+  });
+
   function j(user, error) {
     var nextName = prompt("Please select a username: " + (error || ""));
     if (/^\w{1,32}$/.test(nextName) && nextName) {
@@ -109,14 +130,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var span = document.getElementsByClassName('rainbow')[0];
       var theButton = document.getElementById("TheButton");
       if (lastPress.u == username) {
-        var length = span.innerText.length;
-        var offset = span.id++;
-        var innerString = '';
-        span.innerText.split('').forEach(function (char, index) {
-          var h = Math.floor((360 * (index + offset)) / length) % 360;
-          innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
-        });
-        span.innerHTML = innerString;
+        if (localStorage.animation == 'true') {
+          var length = span.innerText.length;
+          var offset = span.id++;
+          var innerString = '';
+          span.innerText.split('').forEach(function (char, index) {
+            var h = Math.floor((360 * (index + offset)) / length) % 360;
+            innerString += '<span style="color: hsl(' + h + ', 100%, 50%);">' + char + "</span>";
+          });
+          span.innerHTML = innerString;
+        } else {
+          span.innerHTML = span.innerText;
+          theButton.style.backgroundColor = null;
+          theButton.style.boxShadow = null;
+        }
         theButton.classList.add("lighted");
       } else {
         span.innerHTML = span.innerText;
@@ -130,7 +157,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     setInterval(function buttonRainbowBG () {
       var theButton = document.getElementById("TheButton");
       if (typeof buttonRainbowBG.cycle == 'undefined') buttonRainbowBG.cycle = 0;
-      if (theButton.classList.contains("lighted")) {
+      if (localStorage.animation == 'true' &&
+          theButton.classList.contains("lighted")) {
         buttonRainbowBG.cycle += 3;
         theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
         theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
@@ -265,9 +293,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       location.reload();
     }
 
-    /* Persistent configuration */
-    if (typeof(localStorage.night_mode) == 'undefined') localStorage.night_mode = 'false';
-    set_night_mode(localStorage.night_mode);
   };
 })("VmxSQ2ExWXlUWGxUYTJoUVUwWmFTMVZXWXpWVVJscDBaRWQwYVUxck5VbFdSM0JYVlcxS2RWRnVTbFpOUmxveldrUkdjMlJGTVZoalIwWk9ZVEZ3WVZacldtdGhNa1pJVTI1T1dHRnNjR2hWYkZVeFVrWlNWbHBGZEU5V2ExcDRWVmN4YjFaR1NsbFJXR3hZWVRKb2VsVlVTbEpsUjA1SFlVWkNXRkl4U25kV1YzQkhWakpLYzJKSVJsUmlWVnB3Vm14b2IxSldWbGhPVldSb1RWZFNSMVJyYUd0V1JscFlWVzFvWVZKNlJsQlpNRnBIWkZaU2RHSkZOV2xpVjA0MVZtdFdhMk14UlhoYVNGSlVWMGhDV0ZacVNsTmhSbFp4VTJwU2FtSkZOVmRYYTJSSFlXeEpkMk5FUWxkV2JWSnlWako0Vm1ReFRuRlhiR2hwVWpGS1VWZHNXbUZrTVdSWFZteG9ZVkl6VWxSVVZ6RnVaVlprY2xkdGRHaE5hMnd6V2xWV1UxVnRTbFZXYmtKVlZqTkNlbGt5ZUU5V2JIQkpXa2QwYVZJemFETldWM2hTWkRGQ1VsQlVNRDA9");
 });
@@ -279,8 +304,4 @@ function set_night_mode(state) {
     document.body.classList.remove('night-mode');
   }
   localStorage.night_mode = state;
-}
-
-function toggle_night_mode() {
-  set_night_mode(localStorage.night_mode == 'true' ? 'false' : 'true')
 }

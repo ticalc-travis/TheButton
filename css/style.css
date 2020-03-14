@@ -144,8 +144,17 @@ body.night-mode #TheButton {
 }
 
 #TheButton.lighted {
+  background-color: hsl(222, 50%, 50%);
+  color: #fff;
   font-style: bold;
-  box-shadow: 0px 20px 20px;
+  box-shadow: 0px 20px 20px hsl(222, 50%, 75%);
+}
+
+body.night-mode #TheButton.lighted {
+    background-color: hsl(222, 50%, 25%);
+    color: #fff;
+    border-color: #666;
+    box-shadow: 0px 20px 20px hsl(222, 50%, 15%);
 }
 
 #TheButton-div {
@@ -170,6 +179,21 @@ body.night-mode #TheButton-div:hover #TheButton {
 
 body.night-mode #TheButton-div:active #TheButton {
   box-shadow: 0px 6px 8px #111;
+}
+
+#options {
+    display: inline-block;
+    margin-top: 1em;
+    padding: .1em .5em .1em .5em;
+    background-color: #fafafa;
+}
+
+body.night-mode #options {
+    background-color: #222;
+}
+
+#options input {
+    margin-left: 1em;
 }
 
 p {

@@ -47,6 +47,13 @@
     <p id="label">Loading... (If this doesn't disappear in a few seconds, reload the page)</p>
     <p id="user-time"></p>
 
+    <div id="options"><b>Options:</b>
+          <input id="night-mode-toggle" type="checkbox">
+          <label for="night-mode-toggle">Night mode</label>
+          <input id="animation-toggle" type="checkbox">
+          <label for="animation-toggle">Animation</label>
+    </div>
+
     <table id="highscores">
       <tr id="usernametime">
         <th class="lbrank">&nbsp;</th> <th class="lbusername">Username</th> <th class="lbtime">Time</th>
@@ -60,7 +67,7 @@
     <!-- repo links generated automatically -->
     <p id="repolink"></p>
     <p id="livelink"></p>
-    <p id="about"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a>&nbsp;| <a href="#!" id="nightmode" onclick="toggle_night_mode()">Toggle night mode</a><span id="logout" class="hidden">&nbsp;| <a href="#!" id="logoutbutton">Log out</a></span></p>
+    <p id="about"><a href="/TheButton/about/" target="aboutPage" onclick="openAbout(); return false;">About</a><span id="logout" class="hidden">&nbsp;| <a href="#!" id="logoutbutton">Log out</a></span></p>
   </div>
   <script type="text/javascript" src="js/iChat-plugins.js"></script>
   <!-- ripped shamelessly from the MDN -->
