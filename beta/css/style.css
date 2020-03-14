@@ -183,9 +183,9 @@ body.night-mode #TheButton-div:active #TheButton {
 
 #options {
     display: inline-block;
-    margin-top: 1ex;
+    margin-top: 1em;
     padding: .1em .5em .1em .5em;
-    background-color: #f4f4f4;
+    background-color: #fafafa;
 }
 
 body.night-mode #options {
