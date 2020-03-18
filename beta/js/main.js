@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
         theButton.style.boxShadow = "0px 20px 20px hsl(" +
           (buttonRainbowBG.cycle % 360) + ", 100%, " +
-          (localStorage.night_mode == 'true' ? "25" : "75") + "%)";
+          (localStorage.night_mode == 'true' ? "25" : "85") + "%)";
       }
     }, 100);
     // </copyright>
