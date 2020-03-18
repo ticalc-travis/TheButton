@@ -161,7 +161,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           theButton.classList.contains("lighted")) {
         buttonRainbowBG.cycle += 3;
         theButton.style.backgroundColor = "hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 70%)";
-        theButton.style.boxShadow = "0px 20px 20px hsl(" + (buttonRainbowBG.cycle % 360) + ", 100%, 85%)";
+        theButton.style.boxShadow = "0px 20px 20px hsl(" +
+          (buttonRainbowBG.cycle % 360) + ", 100%, " +
+          (localStorage.night_mode == 'true' ? "25" : "85") + "%)";
       }
     }, 100);
     // </copyright>
