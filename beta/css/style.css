@@ -191,7 +191,8 @@ body.night-mode #options {
 }
 
 #options input {
-    margin-left: 1em;
+    margin-left: 1.25em;
+    margin-right: 0.25em;
 }
 
 p {
