@@ -8,7 +8,8 @@ body {
   background-color: white;
   font-family: 'Raleway', sans-serif;
   margin: auto auto;
-  width: 100%;
+  max-width: 35rem;
+  padding: .5rem;
 }
 
 body.night-mode {
@@ -65,8 +66,7 @@ span.visible {
 /* The Button */
 
 #TheButton-div {
-  display: inline-block;
-  margin: .75rem auto .75rem auto;
+  margin: 1.25rem auto 1.25rem auto;
 }
 
 #TheButton-div:active #TheButton {
@@ -86,7 +86,12 @@ span.visible {
   height: 2.5em;
   text-align: center;
   transition: all 0.2s;
-  width: 15em;
+  max-width: 15em;
+  width: 75%;
+}
+
+@media screen and (max-width: 35rem) {
+  #TheButton { width: 90%; }
 }
 
 body.night-mode #TheButton {
@@ -159,16 +164,18 @@ table#highscores td.lbrank {
 
 input#iChat-input {
   margin: .3em;
-  width: 32em;
+  max-width: 32em;
+  width: 75%;
 }
 
 div#iChat-messages {
   border: solid thin black;
   height: 16em;
   margin: auto;
+  max-width: 32em;
   overflow: scroll;
   padding: .25em;
-  width: 32em;
+  width: 90%;
 }
 
 body.night-mode div#iChat-messages {
