@@ -34,8 +34,8 @@ body.night-mode a:visited {
 }
 
 p {
-  margin-top: .75em;
-  margin-bottom: .75em;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
 }
 
 div#main-div {
@@ -58,7 +58,8 @@ span.visible {
 /* Title */
 
 #title {
-  margin-top: .75em;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
   font-weight: bold;
   text-align: center;
 }
@@ -68,8 +69,8 @@ span.visible {
 
 #TheButton-div {
   display: inline-block;
-  padding: 20px;
-  margin: 10px;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
 }
 
 #TheButton-div:active #TheButton {
@@ -122,7 +123,7 @@ body.night-mode #TheButton.lighted {
 table#highscores {
   border: none;
   background-color: #fafafa;
-  margin: .75em auto;
+  margin: .75rem auto;
   border-collapse: separate;
   border-spacing: 7px 3px;
 }
