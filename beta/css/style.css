@@ -5,11 +5,11 @@ html {
 }
 
 body {
-  width: 100%;
-  margin: auto auto;
-  padding: 5px;
   background-color: #fff;
   font-family: 'Raleway', sans-serif;
+  margin: auto auto;
+  padding: 5px;
+  width: 100%;
 }
 
 body.night-mode {
@@ -34,8 +34,7 @@ body.night-mode a:visited {
 }
 
 p {
-  margin-top: .75rem;
-  margin-bottom: .75rem;
+  margin: .75rem auto .75rem auto;
 }
 
 div#main-div {
@@ -58,9 +57,8 @@ span.visible {
 /* Title */
 
 #title {
-  margin-top: .75rem;
-  margin-bottom: .75rem;
   font-weight: bold;
+  margin: .75rem auto .75rem auto;
   text-align: center;
 }
 
@@ -69,8 +67,7 @@ span.visible {
 
 #TheButton-div {
   display: inline-block;
-  margin-top: .75rem;
-  margin-bottom: .75rem;
+  margin: .75rem auto .75rem auto;
 }
 
 #TheButton-div:active #TheButton {
@@ -82,50 +79,49 @@ body.night-mode #TheButton-div:active #TheButton {
 }
 
 #TheButton {
-  width: 400px;
-  height: 70px;
-  transition: all .2s;
-  color: #000;
   background-color: #ededed;
-  padding: 10px 30px;
   border: 1px solid #ccc;
-  text-align: center;
-  font-variant: small-caps;
-  font-size: 150%;
-  letter-spacing: 2.5px;
-  font-weight: bold;
   border-radius: 45px;
-  transition: all 0.2s ease 0s;
   box-shadow: inset 0px 0px 5px #c1c1c1;
+  color: #000;
+  font-size: 150%;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  height: 70px;
+  padding: 10px 30px;
+  text-align: center;
+  transition: all 0.2s;
+  width: 400px;
 }
 
 body.night-mode #TheButton {
   background-color: #444;
-  color: #fff;
   border-color: #666;
+  color: #fff;
 }
 
 #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
-  color: #fff;
   box-shadow: 0px 20px 20px hsl(222, 50%, 75%);
+  color: #fff;
 }
 
 body.night-mode #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
-  color: #fff;
   box-shadow: 0px 20px 20px hsl(222, 50%, 25%);
+  color: #fff;
 }
 
 
 /* High scores */
 
 table#highscores {
-  border: none;
   background-color: #fafafa;
-  margin: .75rem auto;
+  border: none;
   border-collapse: separate;
   border-spacing: 7px 3px;
+  margin: .75rem auto;
 }
 
 body.night-mode table#highscores {
@@ -160,10 +156,10 @@ table#highscores td.lbrank {
 /* Options */
 
 #options {
-  display: inline-block;
-  padding: .1em .5em .1em .5em;
   background-color: #fafafa;
+  display: inline-block;
   margin: auto auto .75rem auto;
+  padding: .1em .5em .1em .5em;
 }
 
 body.night-mode #options {
@@ -171,25 +167,24 @@ body.night-mode #options {
 }
 
 #options input {
-  margin-left: 1.25em;
-  margin-right: 0.25em;
+  margin: auto 0.25em auto 1.25em;
 }
 
 
 /* Chat */
 
 input#iChat-input {
-  width: 60ex;
   margin: .5ex;
+  width: 60ex;
 }
 
 div#iChat-messages {
-  overflow: scroll;
-  width: 60ex;
-  height: 30ex;
   border: solid thin black;
+  height: 30ex;
   margin: auto;
+  overflow: scroll;
   padding: .4ex;
+  width: 60ex;
 }
 
 body.night-mode div#iChat-messages {
@@ -201,10 +196,10 @@ div#iChat-messages p {
 }
 
 span.iChat-timestamp {
-  font-family: monospace;
-  font-weight: bold;
   background-color: #eef;
   color: #66b;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 body.night-mode span.iChat-timestamp {
