@@ -111,15 +111,10 @@ body.night-mode #TheButton.lighted {
 /* High scores */
 
 table#highscores {
-  background-color: hsl(0, 0%, 95%);
   border: none;
   border-collapse: separate;
   border-spacing: .4em .2em;
   margin: .75rem auto;
-}
-
-body.night-mode table#highscores {
-  background-color: hsl(0, 0%, 15%);
 }
 
 table#highscores tr {
@@ -146,14 +141,9 @@ table#highscores td.lbrank {
 /* Options */
 
 #options {
-  background-color: hsl(0, 0%, 95%);
   display: inline-block;
   margin: auto auto .75rem auto;
   padding: .1em .5em .1em .5em;
-}
-
-body.night-mode #options {
-  background-color: hsl(0, 0%, 15%)
 }
 
 #options input {
