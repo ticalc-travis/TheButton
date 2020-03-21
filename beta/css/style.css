@@ -70,23 +70,23 @@ span.visible {
 }
 
 #TheButton-div:active #TheButton {
-  transform: translateY(3px);
+  transform: translateY(.25rem);
 }
 
 #TheButton {
   background-color: #ededed;
-  border: 1px solid #ccc;
-  border-radius: 45px;
-  box-shadow: inset 0px 0px 5px #c1c1c1;
+  border: thin solid #ccc;
+  border-radius: 2.5em;
+  box-shadow: inset 0 0 .25em #c1c1c1;
   color: #000;
   font-size: 150%;
   font-variant: small-caps;
   font-weight: bold;
-  letter-spacing: 2.5px;
-  height: 70px;
+  letter-spacing: .2em;
+  height: 2.5em;
   text-align: center;
   transition: all 0.2s;
-  width: 400px;
+  width: 15em;
 }
 
 body.night-mode #TheButton {
@@ -97,13 +97,13 @@ body.night-mode #TheButton {
 
 #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
-  box-shadow: 0px 20px 20px hsl(222, 50%, 75%);
+  box-shadow: 0 .6em .6em hsl(222, 50%, 75%);
   color: #fff;
 }
 
 body.night-mode #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
-  box-shadow: 0px 20px 20px hsl(222, 50%, 25%);
+  box-shadow: 0 .6em .6em hsl(222, 50%, 25%);
   color: #fff;
 }
 
@@ -114,7 +114,7 @@ table#highscores {
   background-color: #fafafa;
   border: none;
   border-collapse: separate;
-  border-spacing: 7px 3px;
+  border-spacing: .4em .2em;
   margin: .75rem auto;
 }
 
@@ -131,15 +131,11 @@ table#highscores td {
 }
 
 table#highscores th {
-  border-bottom: 1px solid black;
+  border-bottom: thin solid black;
 }
 
 body.night-mode table#highscores th {
-  border-bottom: 1px solid white;
-}
-
-table#highscores .lbusername {
-  padding-right: 2px;
+  border-bottom: thin solid white;
 }
 
 table#highscores td.lbrank {
@@ -167,18 +163,22 @@ body.night-mode #options {
 
 /* Chat */
 
+#iChat {
+  margin-bottom: 1.25rem;
+}
+
 input#iChat-input {
-  margin: .5ex;
-  width: 60ex;
+  margin: .3em;
+  width: 32em;
 }
 
 div#iChat-messages {
   border: solid thin black;
-  height: 30ex;
+  height: 16em;
   margin: auto;
   overflow: scroll;
-  padding: .4ex;
-  width: 60ex;
+  padding: .25em;
+  width: 32em;
 }
 
 body.night-mode div#iChat-messages {
@@ -204,12 +204,12 @@ body.night-mode span.iChat-timestamp {
 span.iChat-username {
   display: inline-block;
   font-weight: bold;
-  margin: 0 0 0 .5ex;
+  margin: 0 0 0 .3em;
 }
 
 span.iChat-username::after {
   content: ":";
-  margin-right: .5ex;
+  margin-right: .3em;
 }
 
 .iChat-highlight {
