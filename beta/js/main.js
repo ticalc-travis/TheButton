@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e = o / 24;
 
           function u(n, r) {
-            return (n = Math.floor(n)) + " " + r + (1 == n ? "" : "s") + ", ";
+            return (n = Math.floor(n)) + "&nbsp;" + r + (1 == n ? "" : "s") + ", ";
           }
           return t %= 60, o %= 24, r = u(r %= 60, "second"), t = u(t, "minute"), o = u(o, "hour"), (e = u(e, "day")) + o + t + "and " + (r = r.substring(0, r.length - 2)) + " ago";
         }
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }, 100);
     var username = firebase.auth().currentUser.displayName;
     firebase.database().ref("/button/users/" + username).on('value', function (snapshot) {
-      document.getElementById('user-time').innerText = "You have " + (n => {
+      document.getElementById('user-time').innerHTML = "You have " + (n => {
         if (n) {
           var r = n / 1e3,
             t = r / 60,
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e = o / 24;
 
           function u(n, r) {
-            return (n = Math.floor(n)) + " " + r + (1 == n ? "" : "s") + ", ";
+            return (n = Math.floor(n)) + "&nbsp;" + r + (1 == n ? "" : "s") + ", ";
           }
           return t %= 60, o %= 24, r = u(r %= 60, "second"), t = u(t, "minute"), o = u(o, "hour"), (e = u(e, "day")) + o + t + "and " + (r = r.substring(0, r.length - 2));
         }
