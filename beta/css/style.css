@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: white;
   font-family: 'Raleway', sans-serif;
   margin: auto auto;
   width: 100%;
@@ -13,23 +13,23 @@ body {
 
 body.night-mode {
   background-color: black;
-  color: #fff;
+  color: white;
 }
 
 a {
-  color: blue;
-}
-
-a:visited {
-  color: blueviolet;
+  color: hsl(240, 100%, 50%);
 }
 
 body.night-mode a {
-  color: #aaf;
+  color: hsl(240, 100%, 80%);
+}
+
+a:visited {
+  color: hsl(275, 100%, 50%);
 }
 
 body.night-mode a:visited {
-  color: #faf;
+  color: hsl(275, 100%, 80%);
 }
 
 p {
@@ -74,11 +74,11 @@ span.visible {
 }
 
 #TheButton {
-  background-color: #ededed;
-  border: thin solid #ccc;
+  background-color: hsl(0, 0%, 90%);
+  border: thin solid hsl(0, 0%, 80%);
   border-radius: 2.5em;
-  box-shadow: inset 0 0 .25em #c1c1c1;
-  color: #000;
+  box-shadow: inset 0 0 .25em hsl(0, 0%, 80%);
+  color: black;
   font-size: 150%;
   font-variant: small-caps;
   font-weight: bold;
@@ -90,28 +90,28 @@ span.visible {
 }
 
 body.night-mode #TheButton {
-  background-color: #444;
-  border-color: #666;
-  color: #fff;
+  background-color: hsl(0, 0%, 25%);
+  border-color: hsl(0, 0%, 40%);
+  color: white;
 }
 
 #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
   box-shadow: 0 .6em .6em hsl(222, 50%, 75%);
-  color: #fff;
+  color: white;
 }
 
 body.night-mode #TheButton.lighted {
   background-color: hsl(222, 50%, 50%);
   box-shadow: 0 .6em .6em hsl(222, 50%, 25%);
-  color: #fff;
+  color: white;
 }
 
 
 /* High scores */
 
 table#highscores {
-  background-color: #fafafa;
+  background-color: hsl(0, 0%, 95%);
   border: none;
   border-collapse: separate;
   border-spacing: .4em .2em;
@@ -119,7 +119,7 @@ table#highscores {
 }
 
 body.night-mode table#highscores {
-  background-color: #222;
+  background-color: hsl(0, 0%, 15%);
 }
 
 table#highscores tr {
@@ -146,14 +146,14 @@ table#highscores td.lbrank {
 /* Options */
 
 #options {
-  background-color: #fafafa;
+  background-color: hsl(0, 0%, 95%);
   display: inline-block;
   margin: auto auto .75rem auto;
   padding: .1em .5em .1em .5em;
 }
 
 body.night-mode #options {
-  background-color: #222;
+  background-color: hsl(0, 0%, 15%)
 }
 
 #options input {
@@ -190,15 +190,15 @@ div#iChat-messages p {
 }
 
 span.iChat-timestamp {
-  background-color: #eef;
-  color: #66b;
+  background-color: hsl(240, 100%, 97%);
+  color: hsl(240, 38%, 57%);
   font-family: monospace;
   font-weight: bold;
 }
 
 body.night-mode span.iChat-timestamp {
-  background-color: #226;
-  color: #88f;
+  background-color: hsl(240, 50%, 27%);
+  color: hsl(240, 100%, 77%);
 }
 
 span.iChat-username {
@@ -213,11 +213,11 @@ span.iChat-username::after {
 }
 
 .iChat-highlight {
-  background-color: #ffa;
+  background-color: hsl(60, 100%, 83%);
 }
 
 body.night-mode .iChat-highlight {
-  background-color: #600;
+  background-color: hsl(0, 100%, 20%);
 }
 
 
