@@ -142,6 +142,11 @@ table#highscores td.lbrank {
   font-weight: bold;
 }
 
+.unit {
+  font-variant: super;
+  opacity: .5;
+}
+
 
 /* Options */
 
