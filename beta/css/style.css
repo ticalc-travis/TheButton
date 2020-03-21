@@ -152,7 +152,7 @@ table#highscores .lbusername {
 }
 
 table#highscores td.lbrank {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 
