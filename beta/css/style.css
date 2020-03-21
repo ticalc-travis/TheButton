@@ -8,7 +8,6 @@ body {
   background-color: #fff;
   font-family: 'Raleway', sans-serif;
   margin: auto auto;
-  padding: 5px;
   width: 100%;
 }
 
@@ -74,10 +73,6 @@ span.visible {
   transform: translateY(3px);
 }
 
-body.night-mode #TheButton-div:active #TheButton {
-  box-shadow: 0px 6px 8px #111;
-}
-
 #TheButton {
   background-color: #ededed;
   border: 1px solid #ccc;
@@ -89,7 +84,6 @@ body.night-mode #TheButton-div:active #TheButton {
   font-weight: bold;
   letter-spacing: 2.5px;
   height: 70px;
-  padding: 10px 30px;
   text-align: center;
   transition: all 0.2s;
   width: 400px;
@@ -231,12 +225,6 @@ body.night-mode .iChat-highlight {
 
 #about {
   font-size: 100%;
-  margin-top: 10px;
-}
-
-#repolink {
-  margin-top: 10px;
-  padding-top: 10px;
 }
 
 div#footer {
