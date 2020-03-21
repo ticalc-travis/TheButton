@@ -72,17 +72,7 @@ span.visible {
   margin: 10px;
 }
 
-#TheButton-div:hover #TheButton {
-  box-shadow: 0px 20px 20px #f4f4f4;
-  transform: translateY(-7px);
-}
-
-body.night-mode #TheButton-div:hover #TheButton {
-  box-shadow: 0px 20px 20px #333;
-}
-
 #TheButton-div:active #TheButton {
-  box-shadow: 0px 6px 8px #f4f4f4;
   transform: translateY(3px);
 }
 
@@ -149,15 +139,6 @@ table#highscores td {
   text-align: left;
 }
 
-table#highscores tr:hover {
-  background-color: #eee;
-  font-weight: 300;
-}
-
-body.night-mode table#highscores tr:hover {
-  background-color: #444;
-}
-
 table#highscores th {
   border-bottom: 1px solid black;
 }
@@ -168,10 +149,6 @@ body.night-mode table#highscores th {
 
 table#highscores .lbusername {
   padding-right: 2px;
-}
-
-table#highscores tr td.lbusername:hover {
-  font-weight: 300;
 }
 
 table#highscores td.lbrank {
