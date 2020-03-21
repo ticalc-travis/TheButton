@@ -179,9 +179,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e = o / 24;
 
           function u(n, r) {
-            return (n = Math.floor(n)) + " " + r + (1 == n ? "" : "s") + ", ";
+            return (n = Math.floor(n)) + r + " ";
           }
-          return t %= 60, o %= 24, r = u(r %= 60, "second"), t = u(t, "minute"), o = u(o, "hour"), (e = u(e, "day")) + o + t + "and " + (r = r.substring(0, r.length - 2));
+          return t %= 60, o %= 24, r = u(r %= 60, "s"), t = u(t, "m"), o = u(o, "h"), (e = u(e, "d")) + o + t + (r = r.substring(0, r.length - 1));
         }
         return "N/A";
       };
