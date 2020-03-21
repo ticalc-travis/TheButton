@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e = o / 24;
 
           function u(n, r) {
-            return (n = Math.floor(n)) + r + " ";
+            return (n = Math.floor(n)) + '<span class="unit">' + r + '</span>' + " ";
           }
           return t %= 60, o %= 24, r = u(r %= 60, "s"), t = u(t, "m"), o = u(o, "h"), (e = u(e, "d")) + o + t + (r = r.substring(0, r.length - 1));
         }
