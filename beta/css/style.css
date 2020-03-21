@@ -163,6 +163,7 @@ table#highscores td.lbrank {
   display: inline-block;
   padding: .1em .5em .1em .5em;
   background-color: #fafafa;
+  margin: auto auto .75rem auto;
 }
 
 body.night-mode #options {
