@@ -1,6 +1,24 @@
+/* General */
+
 * {
   font-family: 'Raleway', sans-serif;
   margin: auto auto;
+}
+
+html {
+  margin: 0 0;
+}
+
+body {
+  width: 100%;
+  margin: auto auto;
+  padding: 5px;
+  background-color: #fff;
+}
+
+body.night-mode {
+  background-color: black;
+  color: #fff;
 }
 
 a {
@@ -33,29 +51,20 @@ span.visible {
   display: inline;
 }
 
-html {
-  margin: 0 0;
+p {
+  text-align: center;
 }
 
-body {
-  width: 100%;
-  margin: auto auto;
-  padding: 5px;
-  background-color: #fff;
-}
-
-body.night-mode {
-  background-color: black;
-  color: #fff;
+strong {
+  font-weight: 600;
 }
 
 div#main-div {
   text-align: center;
 }
 
-div#footer {
-  text-align: center;
-}
+
+/* Title */
 
 #title {
   margin-top: 20px;
@@ -63,54 +72,8 @@ div#footer {
   text-align: center;
 }
 
-table#highscores {
-  border: none;
-  background-color: #fafafa;
-  margin: 20px auto;
-  border-collapse: separate;
-  border-spacing: 7px 3px;
-}
 
-body.night-mode table#highscores {
-  background-color: #222;
-}
-
-table#highscores tr {
-  transition: all .1s;
-}
-
-table#highscores td {
-  text-align: left;
-}
-
-table#highscores tr:hover {
-  background-color: #eee;
-  font-weight: 300;
-}
-
-body.night-mode table#highscores tr:hover {
-  background-color: #444;
-}
-
-table#highscores th {
-  border-bottom: 1px solid black;
-}
-
-body.night-mode table#highscores th {
-  border-bottom: 1px solid white;
-}
-
-table#highscores .lbusername {
-  padding-right: 2px;
-}
-
-table#highscores tr td.lbusername:hover {
-  font-weight: 300;
-}
-
-table#highscores td.lbrank {
-  font-weight: 600;
-}
+/* The Button */
 
 #TheButton {
   width: 400px;
@@ -179,6 +142,61 @@ body.night-mode #TheButton-div:active #TheButton {
   box-shadow: 0px 6px 8px #111;
 }
 
+
+/* High scores */
+
+table#highscores {
+  border: none;
+  background-color: #fafafa;
+  margin: 20px auto;
+  border-collapse: separate;
+  border-spacing: 7px 3px;
+}
+
+body.night-mode table#highscores {
+  background-color: #222;
+}
+
+table#highscores tr {
+  transition: all .1s;
+}
+
+table#highscores td {
+  text-align: left;
+}
+
+table#highscores tr:hover {
+  background-color: #eee;
+  font-weight: 300;
+}
+
+body.night-mode table#highscores tr:hover {
+  background-color: #444;
+}
+
+table#highscores th {
+  border-bottom: 1px solid black;
+}
+
+body.night-mode table#highscores th {
+  border-bottom: 1px solid white;
+}
+
+table#highscores .lbusername {
+  padding-right: 2px;
+}
+
+table#highscores tr td.lbusername:hover {
+  font-weight: 300;
+}
+
+table#highscores td.lbrank {
+  font-weight: 600;
+}
+
+
+/* Options */
+
 #options {
   display: inline-block;
   margin-top: 1em;
@@ -195,27 +213,8 @@ body.night-mode #options {
   margin-right: 0.25em;
 }
 
-p {
-  text-align: center;
-}
 
-strong {
-  font-weight: 600;
-}
-
-#about {
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 100%;
-  margin-top: 10px;
-}
-
-#repolink {
-  margin-top: 10px;
-  padding-top: 10px;
-  cursor: auto;
-  border-radius: 5px;
-}
+/* Chat */
 
 input#iChat-input {
   width: 60ex;
@@ -272,4 +271,25 @@ span.iChat-text {
 
 body.night-mode .iChat-highlight {
   background-color: #600;
+}
+
+
+/* Footer */
+
+#about {
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 100%;
+  margin-top: 10px;
+}
+
+#repolink {
+  margin-top: 10px;
+  padding-top: 10px;
+  cursor: auto;
+  border-radius: 5px;
+}
+
+div#footer {
+  text-align: center;
 }
