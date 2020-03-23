@@ -1,78 +1,126 @@
-* {
-  font-family: 'Raleway', sans-serif;
-  margin: auto auto;
-}
-
-a {
-  color: blue;
-}
-
-a:visited {
-  color: blueviolet;
-}
-
-body.night-mode a {
-  color: #aaf;
-}
-
-body.night-mode a:visited {
-  color: #faf;
-}
-
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.visible {
-  display: block;
-  visibility: visible;
-}
-
-span.visible {
-  display: inline;
-}
+/* General */
 
 html {
   margin: 0 0;
 }
 
 body {
-  width: 100%;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
   margin: auto auto;
-  padding: 5px;
-  background-color: #fff;
+  max-width: 50rem;
+  padding: .5rem;
 }
 
 body.night-mode {
   background-color: black;
-  color: #fff;
+  color: white;
+}
+
+a {
+  color: hsl(240, 100%, 50%);
+}
+
+body.night-mode a {
+  color: hsl(240, 100%, 80%);
+}
+
+a:visited {
+  color: hsl(275, 100%, 50%);
+}
+
+body.night-mode a:visited {
+  color: hsl(275, 100%, 80%);
+}
+
+p {
+  margin: .75rem auto .75rem auto;
 }
 
 div#main-div {
   text-align: center;
 }
 
-div#footer {
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+span.visible {
+  display: inline;
+}
+
+
+/* Title */
+
+#title {
+  font-weight: bold;
+  margin: .75rem auto .75rem auto;
   text-align: center;
 }
 
-#title {
-  margin-top: 20px;
-  font-weight: 600;
-  text-align: center;
+
+/* The Button */
+
+#TheButton-div {
+  margin: 1.25rem auto 1.25rem auto;
 }
+
+#TheButton-div:active #TheButton {
+  transform: translateY(.25rem);
+}
+
+#TheButton {
+  background-color: hsl(0, 0%, 90%);
+  border: thin solid hsl(0, 0%, 80%);
+  border-radius: 2.5em;
+  box-shadow: inset 0 0 .25em hsl(0, 0%, 80%);
+  color: black;
+  font-size: 150%;
+  font-variant: small-caps;
+  font-weight: bold;
+  max-width: 15em;
+  letter-spacing: .2em;
+  height: 2.5em;
+  text-align: center;
+  transition: all 0.2s;
+  width: 75%;
+}
+
+@media screen and (max-width: 35rem) {
+  /* Allow the button to fill a bit more width on narrow screens */
+  #TheButton { width: 90%; }
+}
+
+body.night-mode #TheButton {
+  background-color: hsl(0, 0%, 25%);
+  border-color: hsl(0, 0%, 40%);
+  color: white;
+}
+
+#TheButton.lighted {
+  background-color: hsl(222, 50%, 50%);
+  box-shadow: 0 .6em .6em hsl(222, 50%, 75%);
+  color: white;
+}
+
+body.night-mode #TheButton.lighted {
+  background-color: hsl(222, 50%, 50%);
+  box-shadow: 0 .6em .6em hsl(222, 50%, 25%);
+  color: white;
+}
+
+
+/* High scores */
 
 table#highscores {
   border: none;
-  background-color: #fafafa;
-  margin: 20px auto;
   border-collapse: separate;
-  border-spacing: 7px 3px;
-}
-
-body.night-mode table#highscores {
-  background-color: #222;
+  border-spacing: .4em .2em;
+  margin: .75rem auto;
 }
 
 table#highscores tr {
@@ -83,150 +131,63 @@ table#highscores td {
   text-align: left;
 }
 
-table#highscores tr:hover {
-  background-color: #eee;
-  font-weight: 300;
-}
-
-body.night-mode table#highscores tr:hover {
-  background-color: #444;
-}
-
 table#highscores th {
-  border-bottom: 1px solid black;
+  border-bottom: thin solid black;
 }
 
 body.night-mode table#highscores th {
-  border-bottom: 1px solid white;
-}
-
-table#highscores .lbusername {
-  padding-right: 2px;
-}
-
-table#highscores tr td.lbusername:hover {
-  font-weight: 300;
+  border-bottom: thin solid white;
 }
 
 table#highscores td.lbrank {
-  font-weight: 600;
+  font-weight: bold;
 }
 
-#TheButton {
-  width: 400px;
-  height: 70px;
-  transition: all .2s;
-  color: #000;
-  background-color: #ededed;
-  padding: 10px 30px;
-  border: 1px solid #ccc;
-  vertical-align: center;
-  text-align: center;
-  text-decoration: none;
-  font-variant: small-caps;
-  font-size: 150%;
-  cursor: pointer;
-  letter-spacing: 2.5px;
-  font-weight: 600;
-  color: #000;
-  border-radius: 45px;
-  transition: all 0.2s ease 0s;
-  cursor: pointer;
-  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;
+.unit {
+  font-size: 75%;
+  opacity: .6;
+  vertical-align: super;
 }
 
-body.night-mode #TheButton {
-    background-color: #444;
-    color: #fff;
-    border-color: #666;
-}
 
-#TheButton.lighted {
-  background-color: hsl(222, 50%, 50%);
-  color: #fff;
-  box-shadow: 0px 20px 20px hsl(222, 50%, 75%);
-}
-
-body.night-mode #TheButton.lighted {
-    background-color: hsl(222, 50%, 50%);
-    color: #fff;
-    box-shadow: 0px 20px 20px hsl(222, 50%, 25%);
-}
-
-#TheButton-div {
-  display: inline-block;
-  padding: 20px;
-  margin: 10px;
-}
-
-#TheButton-div:hover #TheButton {
-  box-shadow: 0px 20px 20px #f4f4f4;
-  transform: translateY(-7px);
-}
-
-body.night-mode #TheButton-div:hover #TheButton {
-  box-shadow: 0px 20px 20px #333;
-}
-
-#TheButton-div:active #TheButton {
-  box-shadow: 0px 6px 8px #f4f4f4;
-  transform: translateY(3px);
-}
-
-body.night-mode #TheButton-div:active #TheButton {
-  box-shadow: 0px 6px 8px #111;
-}
+/* Options */
 
 #options {
-    display: inline-block;
-    margin-top: 1em;
-    padding: .1em .5em .1em .5em;
-    background-color: #fafafa;
-}
-
-body.night-mode #options {
-    background-color: #222;
+  display: inline-block;
+  margin: auto auto .75rem auto;
+  padding: .1em .5em .1em .5em;
 }
 
 #options input {
-    margin-left: 1em;
+  margin: auto 0.25em auto 1.25em;
 }
 
-p {
-  text-align: center;
-}
 
-strong {
-  font-weight: 600;
-}
+/* Chat */
 
-#about {
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 100%;
-  margin-top: 10px;
-}
-
-#repolink {
-  margin-top: 10px;
-  padding-top: 10px;
-  cursor: auto;
-  border-radius: 5px;
+#iChat {
+  margin-bottom: 1.25rem;
 }
 
 input#iChat-input {
-  width: 60ex;
-  margin: .5ex;
+  margin: .3em;
+  max-width: 32em;
+  width: 75%;
+}
+
+body.night-mode input#iChat-input {
+  background-color: black;
+  color: white;
 }
 
 div#iChat-messages {
-  overflow: scroll;
-  width: 60ex;
-  height: 30ex;
   border: solid thin black;
-  padding: .4ex;
+  height: 16em;
+  margin: auto;
+  max-width: 32em;
+  overflow: scroll;
+  padding: .25em;
+  width: 90%;
 }
 
 body.night-mode div#iChat-messages {
@@ -235,40 +196,46 @@ body.night-mode div#iChat-messages {
 
 div#iChat-messages p {
   text-align: left;
-  font-weight: bold;
 }
 
 span.iChat-timestamp {
+  background-color: hsl(240, 100%, 97%);
+  color: hsl(240, 38%, 57%);
   font-family: monospace;
   font-weight: bold;
-  background-color: #eef;
-  color: #66b;
 }
 
 body.night-mode span.iChat-timestamp {
-  background-color: #226;
-  color: #88f;
+  background-color: hsl(240, 50%, 27%);
+  color: hsl(240, 100%, 77%);
 }
 
 span.iChat-username {
   display: inline-block;
   font-weight: bold;
-  margin: 0 0 0 .5ex;
+  margin: 0 0 0 .3em;
 }
 
 span.iChat-username::after {
   content: ":";
-  margin-right: .5ex;
-}
-
-span.iChat-text {
-  font-weight: normal;
+  margin-right: .3em;
 }
 
 .iChat-highlight {
-  background-color: #ffa;
+  background-color: hsl(60, 100%, 83%);
 }
 
 body.night-mode .iChat-highlight {
-  background-color: #600;
+  background-color: hsl(0, 100%, 20%);
+}
+
+
+/* Footer */
+
+#about {
+  font-size: 100%;
+}
+
+div#footer {
+  text-align: center;
 }

@@ -3,6 +3,7 @@
 
 <head>
   <title>TheButton</title>
+  <meta name="viewport" content="width=device-width">
   <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109579764-3"></script>
   <script>
@@ -47,22 +48,27 @@
     <p id="label">Loading... (If this doesn't disappear in a few seconds, reload the page)</p>
     <p id="user-time"></p>
 
-    <div id="options"><b>Options:</b>
-          <input id="night-mode-toggle" type="checkbox">
-          <label for="night-mode-toggle">Night mode</label>
-          <input id="animation-toggle" type="checkbox">
-          <label for="animation-toggle">Animation</label>
-    </div>
-
     <table id="highscores">
       <tr id="usernametime">
         <th class="lbrank">&nbsp;</th> <th class="lbusername">Username</th> <th class="lbtime">Time</th>
       </tr>
     </table>
 
-    <label for="iChat-input">iChat</label>
-    <input id="iChat-input" class="iChat iChat-input" placeholder="Chat here!" minlength="2" maxlength="127"><div id="iChat-messages" class="iChat-messages iChat"></div><script src="https://legend-of-iphoenix.github.io/iChat/js/iChat.min.js"></script>
+    <div id="options"><b>Options:</b>
+      <input id="night-mode-toggle" type="checkbox">
+      <label for="night-mode-toggle">Night mode</label>
+      <input id="animation-toggle" type="checkbox">
+      <label for="animation-toggle">Animation</label>
+    </div>
+
+    <div id="iChat">
+      <label for="iChat-input">iChat</label>
+      <input id="iChat-input" class="iChat iChat-input" placeholder="Chat here!" minlength="2" maxlength="127">
+      <div id="iChat-messages" class="iChat-messages iChat"></div>
+      <script src="https://legend-of-iphoenix.github.io/iChat/js/iChat.min.js"></script>
+    </div>
   </div>
+
   <div id="footer">
     <!-- repo links generated automatically -->
     <p id="repolink"></p>
