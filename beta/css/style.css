@@ -175,6 +175,11 @@ input#iChat-input {
   width: 75%;
 }
 
+body.night-mode input#iChat-input {
+  background-color: black;
+  color: white;
+}
+
 div#iChat-messages {
   border: solid thin black;
   height: 16em;
