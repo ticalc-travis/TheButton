@@ -91,6 +91,7 @@ span.visible {
 }
 
 @media screen and (max-width: 35rem) {
+  /* Allow the button to fill a bit more width on narrow screens */
   #TheButton { width: 90%; }
 }
 
